@@ -13,6 +13,7 @@ class weapons(objects):
     def __init__(thing, name, use, damage):
         super().__init__(name, use)
         thing.damage = damage
+        thing.use = "Attack stuff"
     def str(thing):
         return f"{thing.name}, {thing.use}, {thing.damage}"
 
@@ -32,26 +33,27 @@ class gold_sword(weapons):
     def str(thing):
         return f"{thing.name}, {thing.use}, {thing.damage}"
 
-ironsword = []
-goldsword = []
+ironswords = []
+goldswords = []
+
 swordquestion = input("Do you want a sword? ")
 whichsword = input("Which sword do you want? ")
 
 def getgoldsword(name, damage):
     goldsword = gold_sword(name, damage)
-    goldsword.append(goldsword)
-    for sword in goldsword:
+    goldswords.append(goldsword)
+    for sword in goldswords:
         print(sword)
 
 def getironsword(name, damage):
     ironsword = iron_sword(name, damage)
-    ironsword.append(ironsword)
-    for sword in ironsword:
+    ironswords.append(ironsword)
+    for sword in ironswords:
         print(sword)
-
 
 if swordquestion.lower() == "yes":
     if whichsword.lower() == "gold":
-        print(gold_sword)
+        print(gold)
     elif whichsword.lower() == "iron":
-        print(iron_sword)
+        print(gold)
+print(ironswords)
