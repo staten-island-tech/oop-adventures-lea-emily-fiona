@@ -7,7 +7,7 @@ while True:
         name = input()
         print("Good luck, "+name+".") """
 
-import uuid
+""" import uuid
 
 class User:
     def _init_(self, id, name):
@@ -27,7 +27,7 @@ class Teacher(User):
         self.privileges = "teacher"
         self.department = department
         self.tenure = tenure
-    def _str_(self)
+    def _str_(self):
         return f"{self.name}, {self.department}, tenure = {self.tenure}"
     
 class Administrator(Teacher):
@@ -89,4 +89,37 @@ elif user_request.upper() == "ADMIN":
 else:
     print("something went wrong, are you sure you typed the request correctly?")
 still_continue = input("Would you like to continue Y/N").uppser()
-add_more_users = still_continue
+add_more_users = still_continue """
+
+""" class Person:
+    def __init__(self, name, age):
+      self.name = name
+      self.age = age
+p1 = Person("John", 36)
+
+print(p1.name)
+print(p1.age) """
+""" 
+class Person:
+    def __init__(feature, eye, age):
+        feature.eye = eye
+        feature.age = age
+    def __str__(feature):
+        return f"{feature.eye}({feature.age})"
+p1 = Person("green", 17)
+
+print(p1)
+ """
+
+class Person:
+    """ def __init__(feature, eye, age):
+        feature.eye = eye
+        feature.age = age
+    
+    def myfunc(abc):
+        print("Hi, my eye color is " + abc.eye) """
+    
+p1 = Person("green", 17)
+
+del p1.age
+print(p1.eye)
