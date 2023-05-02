@@ -1,58 +1,52 @@
 class objects():
-    def __init__(thing, name, use):
-        thing.name = name
-        thing.use = use
+    def __init__(self, thing):
+        self.thing = thing
 
 class gold(objects):
-    def __init__(thing, name, use):
+    def __init__(self, thing, name, use):
         super().__init__(name, use)
-        name = "Gold"
-        use = "Buy stuff"
+        self.thing = thing
+        self.name = "Gold"
+        self.use = use
 
 class weapons(objects):
-    def __init__(thing, name, use, damage):
-        super().__init__(name, use)
-        thing.damage = damage
-        thing.use = use
+    def __init__(self, thing, name, use, damage):
+        super().__init__(thing, name, use)
+        self.damage = damage
+        self.use = use
     def str(thing):
-        return f"{thing.name}, {thing.use}, {thing.damage}"
+        return f"{thing.use}, {thing.damage}"
 
 class iron_sword(weapons):
-    def __init__(thing, name, use, damage):
-        super().__init__(name, use, damage)
-        thing.name = "Iron Sword"
-        thing.damage = "40 damage per attack"
+    def __init__(self, thing, name, use, damage):
+        super().__init__(name, thing, use, damage)
+        self.name = name
+        self.damage = damage
     def str(thing):
         return f"{thing.name}, {thing.use}, {thing.damage}"
 
 class gold_sword(weapons):
-    def __init__(thing, name, use, damage):
-        super().__init__(name, use, damage)
-        thing.name = "Gold Sword"
-        thing.damage = "80 damage"
+    def __init__(self, thing, name, use, damage):
+        super().__init__(name, thing, use, damage)
+        self.name = name
+        self.damage = damage
     def str(thing):
         return f"{thing.name}, {thing.use}, {thing.damage}"
-
-obtainedswords = []
 
 swordquestion = input("Do you want a sword? ")
 whichsword = input("Which sword do you want? ")
 
 def getgoldsword(name, damage):
-    goldsword = gold_sword(name, damage)
-    obtainedswords.append(goldsword)
-    for sword in obtainedswords:
-        print(sword)
+    gold_sword(name, damage)
+    name = "Gold Sword"
+    damage = "80 damage"
+
 
 def getironsword(name, damage):
-    ironsword = iron_sword(name, damage)
-    obtainedswords.append(ironsword)
-    for sword in obtainedswords:
-        print(sword)
+    iron_sword(name, damage)
 
 if swordquestion.lower() == "yes":
     if whichsword.lower() == "gold":
-        getgoldsword(name="Gold sword", damage="80 damage")
+        getgoldsword("Gold sword", "80 damage")
     elif whichsword.lower() == "iron":
         print(gold_sword)
-print(obtainedswords)
