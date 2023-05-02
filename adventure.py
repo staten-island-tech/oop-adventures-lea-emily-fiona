@@ -111,15 +111,37 @@ p1 = Person("green", 17)
 print(p1)
  """
 
-class Person:
-    """ def __init__(feature, eye, age):
+""" class Person:
+    def __init__(feature, eye, age):
         feature.eye = eye
         feature.age = age
     
     def myfunc(abc):
-        print("Hi, my eye color is " + abc.eye) """
+        print("Hi, my eye color is " + abc.eye)
     
 p1 = Person("green", 17)
 
 del p1.age
 print(p1.eye)
+ """
+class Person:
+    def __init__(feature, eye, age):
+        feature.eye = eye
+        feature.age = age
+
+    def printfeatures(feature):
+        print(feature.eye, feature.age)
+
+
+
+class Child(Person):
+    def __init__(feature, eye, age, year):
+       super().__init__(eye, age)
+       feature.dob = year
+
+
+    def stats(feature):
+     print("Welcome your stats are", feature.eye, feature.age, "and your year is", feature.dob)
+
+x = Child("brown", "26", 1999)
+x.stats()
