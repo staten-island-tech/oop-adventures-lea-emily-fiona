@@ -13,6 +13,17 @@ class gold(objects):
         self.name = "Gold"
         self.use = "Purchase stuff"
 
+class armor(objects):
+    def __init__(self, name, use, defense):
+        self.name = "Armor"
+        self.use = "Increase your defense"
+        self.defense = "+20 defense"
+
+class shield(armor):
+    def __init__(self, name, use, defense):
+        super()__init__(use, defense)
+        self.name = "Bronze Shield"
+
 class weapon(objects):
     def __init__(self, use, name, damage):
         super()__init__(name)
