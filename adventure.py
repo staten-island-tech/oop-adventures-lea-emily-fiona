@@ -7,14 +7,17 @@ while True:
         name = input()
         print("Good luck, "+name+".") """
 
-""" import uuid
+import uuid
 
 class User:
     def _init_(self, id, name):
         self.id = id
-        self.name = name
+        self.name = name 
+new_id = str(uuid.uuid4())
+mark = User(new_id, "Mark")
+print(mark.id, mark.name)
 
-class Student(User):
+""" class Student(User):
     def _init_(self, id, name, official_class):
         super()._init_(id, name)
         self.official_class = official_class
@@ -124,7 +127,7 @@ p1 = Person("green", 17)
 del p1.age
 print(p1.eye)
  """
-class Person:
+""" class Person:
     def __init__(feature, eye, age):
         feature.eye = eye
         feature.age = age
@@ -144,4 +147,5 @@ class Child(Person):
      print("Welcome your stats are", feature.eye, feature.age, "and your year is", feature.dob)
 
 x = Child("brown", "26", 1999)
-x.stats()
+x.stats() """
+ """
