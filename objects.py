@@ -3,6 +3,11 @@ class objects():
         self.name = name
         self.use = use
 
+class potions(objects):
+    def __init__(self, name, use):
+        self.name = "Health Potion"
+        self.use = "Heal 5 lives"
+
 class gold(objects):
     def __init__(self, name, use):
         self.name = "Gold"
@@ -17,4 +22,3 @@ class weapon(objects):
 class sword(weapon):
     def __init__(self, use, name, damage):
         super()__init__(use, name, damage)
-
