@@ -148,4 +148,3 @@ class Child(Person):
 
 x = Child("brown", "26", 1999)
 x.stats() """
- """
