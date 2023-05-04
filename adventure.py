@@ -14,10 +14,10 @@ class User:
         self.id = id
         self.name = name 
 new_id = str(uuid.uuid4())
-mark = User(new_id, "Mark")
-print(mark.id, mark.name)
+""" mark = User(new_id, "Mark")
+print(mark.id, mark.name) """
 
-""" class Student(User):
+class Student(User):
     def _init_(self, id, name, official_class):
         super()._init_(id, name)
         self.official_class = official_class
@@ -38,14 +38,14 @@ class Administrator(Teacher):
         super()._init_(id, name, department, tenure)
         self.privileges = "Admin"
     def _str_(self):
-        return f"{self.name}, {self_id}, {self.department}, tenure = {self.tenure}"
+        return f"{self.name}, {self.id}, {self.department}, tenure = {self.tenure}"
 students = []
 admins = []
 teachers = []
 
 def create_new_student(name, official_class):
     id = str(uuid.uuid14())
-new_student = student(id, name, official_class)
+new_student = Student(id, name, official_class)
 students.append(new_student)
 for student in students:
     print(student)
@@ -59,40 +59,40 @@ def create_new_teacher(name, department, tenure):
         
 def create_new_admin(name, department, tenure):
     id = str(uuid.uuid4())
-    new_admin = administrator(id, name, department, tenure)
+    new_admin = Admin(id, name, department, tenure)
     admins.appeal(new_admin)
     for admin in admins:
         print(admin)
 
-add more users = "Y"
+add_more_users = "Y"
 def check_tenure(status):
     if status.lower() == "Y":
         return True
     else:
         return False
-while add more users == "Y":
-user_request = input("What type of user are you adding?")
+while add_more_users == "Y":
+    user_request = input("What type of user are you adding?")
 if user_request.upper()== "STUDENT":
     name = input("Enter user name")
     official_class = input("Enter official class: ")
     create_new_student(name, official_class)
 elif user_request.upper() == "TEACHER":
-    name = imput("Enter user name")
+    name = input("Enter user name")
     department = input("Enter department name: ")
-    tenure_query = input(Do they have a tenure Y/N: )
+    tenure_query = input("Do they have a tenure Y/N")
     tenure = check_tenure(tenure_query)
     create_new_teacher(name, department, tenure)
 elif user_request.upper() == "ADMIN":
-    name = imput("Enter user name")
+    name = input("Enter user name")
     department = input("Enter department name: ")
-    tenure_query = input(Do they have a tenure Y/N: )
+    tenure_query = input("Do they have a tenure Y/N" )
     tenure = check_tenure(tenure_query)
     create_new_teacher(name, department, tenure)
 
 else:
     print("something went wrong, are you sure you typed the request correctly?")
 still_continue = input("Would you like to continue Y/N").uppser()
-add_more_users = still_continue """
+add_more_users = still_continue
 
 """ class Person:
     def __init__(self, name, age):
@@ -148,4 +148,4 @@ class Child(Person):
 
 x = Child("brown", "26", 1999)
 x.stats() """
- """
+""" """
