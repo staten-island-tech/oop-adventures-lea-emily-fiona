@@ -5,31 +5,26 @@ class objects():
 
 class potions(objects):
     def __init__(self, name, use):
-        self.name = "Health Potion"
-        self.use = "Heal 5 lives"
+        super().__init__(name, use)
 
 class gold(objects):
     def __init__(self, name, use):
-        self.name = "Gold"
-        self.use = "Purchase stuff"
+        super().__init__(name, use)
 
 class armor(objects):
     def __init__(self, name, use, defense):
-        self.name = "Armor"
-        self.use = "Increase your defense"
-        self.defense = "+20 defense"
+        super().__init__(name, use)
+        self.defense = defense
 
 class shield(armor):
     def __init__(self, name, use, defense):
-        super()__init__(use, defense)
-        self.name = "Bronze Shield"
+        super().__init__(use, defense, name)
 
 class weapon(objects):
     def __init__(self, use, name, damage):
-        super()__init__(name)
-        self.use = "Damage enemies"
+        super().__init__(name, use)
         self.damage = damage
 
 class sword(weapon):
     def __init__(self, use, name, damage):
-        super()__init__(use, name, damage)
+        super().__init__(use, name, damage)
