@@ -7,8 +7,6 @@ class potions(objects):
     def __init__(self, name, use):
         super().__init__(name, use)
 
-
-
 class gold(objects):
     def __init__(self, name, use):
         super().__init__(name, use)
