@@ -84,4 +84,9 @@ if choice3 == "witch":
 elif choice3 == "alchemist":
     print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
     print("    ")
+    def select_weapon(name, damage):
+        new_weapon = weapon(name, damage)
+        items.append(new_weapon)
+        for weapon in items:
+            print(items)
     print("To show his appreciation, the alchemist turns your sword")
