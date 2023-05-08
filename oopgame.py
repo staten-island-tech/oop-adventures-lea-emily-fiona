@@ -30,8 +30,11 @@ if choice1 == "blacksmith":
         print("However, you do end up finding iron, and the blacksmith is very grateful")
         print("    ")
         print("He gives you a sword and five pieces of gold to show his appreciation")
-        print("+1 bronze sword")
+        sword.name = "Iron sword"
+        sword.damage = "40 damage"
+        print("+1", sword.name)
         print("+5 coins")
+        print("The stats of the", sword.name, "is:", sword.damage)
         items.append(sword)
         coins.append(5)
     elif iron == "n":
@@ -60,15 +63,23 @@ if choice2 == "villager":
     print("-2 lives")
     lives = (lives-2)
 elif choice2 == "armorer":
+    armor.defense = "+20 defense"
+    armor.name = "Iron armor"
+    shield.defense = "+20 defense"
+    shield.name = "Bronze shield"
     print("The armorer is pleasantly surprised by your visit, and wants to help you")
     print("    ")
-    print("He says he's going to teach you how to make a shield")
+    print("He says he's going to teach you how to make defensive items!")
     print("    ")
-    print("After hours of working and talking, together you've made a shield!")
+    print("After hours of working and talking, together you've made armor and a shield!")
     print("    ")
-    print("The armorer decides he likes you, and he let's you keep the shield")
-    print("+1 bronze shield")
+    print("The armorer decides he likes you, and he let's you keep the armor and shield!")
+    print("+1", shield.name)
+    print("+1", armor.name)
+    print("The", shield.name, "gives you", shield.defense)
+    print("The", armor.name, "gives you", armor.defense)
     items.append(shield)
+    items.append(armor)
 print("After your visit, you continue walking")
 print("    ")
 print("Here at this fork you'll meet your last villager")
@@ -78,15 +89,26 @@ choice3 = input("witch or alchemist").lower()
 if choice3 == "witch":
     print("To your surprise, this witch is a good witch!")
     print("    ")
-    print("She gives you a healing potion and your lives are restored")
-    print("reset - 5 lives")
+    potions.name = "healing potion"
+    potions.use = "your lives get restored!"
+    print("She gives you a", potions.name, "and", potions.use)
+    print("reset - you now have 5 lives")
     lives = 5
 elif choice3 == "alchemist":
     print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
     print("    ")
+<<<<<<< HEAD
     def select_weapon(name, damage):
         new_weapon = weapon(name, damage)
         items.append(new_weapon)
         for weapon in items:
             print(items)
     print("To show his appreciation, the alchemist turns your sword")
+=======
+    print("To show his appreciation, the alchemist turns your sword into a golden sword")
+    print(" -1 Iron sword")
+    print("+1 Golden Sword")
+    sword.name = "Golden Sword"
+    sword.damage = "80 damage"
+    print("The stats of the", sword.name, "is:", sword.damage)
+>>>>>>> main
