@@ -96,17 +96,26 @@ elif choice3 == "alchemist":
         items.append(new_weapon)
         for weapon in items:
             print(items)
-            if sword in items:
-                print("To show his appreciation, the alchemist turns your sword into gold")
-                sword.name = "Golden Sword"
-                sword.damage = "80 damage"
-                print("You now have",sword.name)
-                print ("The stats of the", sword.name,"is", sword.damage)
-            elif shield in items:
-                print("To show his appreciation, the alchemist turns your shield into gold")
-                shield.name = "Golden Shield"
-                shield.defense = "+40 defense"
-                print("You now have", shield.name)
-                print("The", shield.name, "gives you", shield.defense)
-            else:
-                print("The alchemist can not turn any of your items into gold!")
+    if sword and shield in items:
+        sword.name = "Golden Sword"
+        sword.damage = "80 damage"
+        shield.name = "Golden Shield"
+        shield.defense = "+40 defense"
+        print("To show his appreciation, the alchemist turns your sword and shield into gold!")
+        print("You now have",sword.name,"and",shield.name)
+        print ("The stats of the", sword.name,"is", sword.damage)
+        print("The", shield.name, "gives you", shield.defense)
+    elif sword in items:
+        print("To show his appreciation, the alchemist turns your sword into gold")
+        sword.name = "Golden Sword"
+        sword.damage = "80 damage"
+        print("You now have",sword.name)
+        print ("The stats of the", sword.name,"is", sword.damage)
+    elif shield in items:
+        print("To show his appreciation, the alchemist turns your shield into gold")
+        shield.name = "Golden Shield"
+        shield.defense = "+40 defense"
+        print("You now have", shield.name)
+        print("The", shield.name, "gives you", shield.defense)
+    else:
+        print("The alchemist can not turn any of your items into gold!")
