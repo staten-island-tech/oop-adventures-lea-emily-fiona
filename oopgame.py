@@ -105,3 +105,8 @@ elif choice3 == "alchemist":
             elif shield in items:
                 print("To show his appreciation, the alchemist turns your shield into gold")
                 shield.name = "Golden Shield"
+                shield.defense = "+40 defense"
+                print("You now have", shield.name)
+                print("The", shield.name, "gives you", shield.defense)
+            else:
+                print("The alchemist can not turn any of your items into gold!")
