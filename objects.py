@@ -33,3 +33,4 @@ class weapon(objects):
 class sword(weapon):
     def __init__(self, use, name, damage):
         super().__init__(use, name, damage)
+        
