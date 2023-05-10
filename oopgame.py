@@ -4,8 +4,8 @@ while restart == "yes":
     lives = 5
     coins = []
     items = []
-    print("Hello! And welcome to the game! Are you ready to begin?")
-    start = input("y/n").lower()
+    print("Hello! And welcome to the game! Are you ready to begin? ")
+    start = input("y/n ").lower()
     if start == "y":
         print("Then let's begin...")
     if start == "n":
@@ -18,11 +18,11 @@ while restart == "yes":
     print("Once you reach the village, you stumble upon your first fork in the road")
     print("    ")
     print("You must choose...")
-    print("Would you like to see the blacksmith or the villager")
-    choice1 = input("blacksmith or villager").lower()
+    print("Would you like to see the blacksmith or the villager? ")
+    choice1 = input("blacksmith or villager ").lower()
     if choice1 == "blacksmith":
         print("The blacksmith asks whether or not you'd like to help him find iron")
-        iron = input("Do you help him? y/n").lower()
+        iron = input("Do you help him? y/n ").lower()
         if iron == "y":
             print("    ")
             print("On your quest to find iron, you trip and fall")
@@ -37,7 +37,7 @@ while restart == "yes":
             print("+1", sword.name)
             print("+5 coins")
             print("Your", sword.name, "does", sword.damage)
-            items.append("Iron sword")
+            items.append(sword)
             coins.append(5)
         elif iron == "n":
             print("He's mad and yells at you")
@@ -53,8 +53,8 @@ while restart == "yes":
         coins.append(10)
     print("You venture farther through the village and meet your next obstacle")
     print("    ")
-    print("Two houses stand before you, the villager's and the armorer's")
-    print("Would you like to visit the villager or the armorer?")
+    print("Two houses stand before you, the villager's and the armorer's ")
+    print("Would you like to visit the villager or the armorer? ")
     choice2 = input("villager or armorer").lower()
     if choice2 == "villager":
         print("You walk in, and the villager is sleeping")
@@ -80,8 +80,8 @@ while restart == "yes":
         print("+1", armor.name)
         print("The", shield.name, "gives you", shield.defense)
         print("The", armor.name, "gives you", armor.defense)
-        items.append("Iron shield")
-        items.append("Iron Armor")
+        items.append(shield)
+        items.append(armor)
     print("After your visit, you continue walking")
     print("    ")
     print("Here at this fork you'll meet your last villager")
@@ -99,35 +99,40 @@ while restart == "yes":
     elif choice3 == "alchemist":
         print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
         print("    ")
-        w = "Y"
-        while w == "Y":
-            print(f"the weapon(s) you have are {items}")
-            if "sword" == items:
-                print("To show his appreciation, the alchemist turns your sword to gold!")
-                print("Your gold sword now does more damage")
-                items.remove("Iron sword")
-                items.append("Gold sword")
-            elif "sword" != items and "shield" == items:
-                print("To show his appreciation, the alchemist turns your shield to gold!")
-                print("Your gold shield now has better defense abilities")
-                items.remove("Iron shield")
-                items.append("Gold shield")
-            elif "sword" != items and "shield" != items:
-                print("The alchemist is very grateful to you, and wants to show his appreciation")
-                print("    ")
-                print("However, you don't have any weapons for the alchemist to work his craft on")
-                print("    ")
-                print("He gives you 10 coins and sends you on your way")
-                print("+10 coins")
-                coins.append(10)
+        print(f"the weapon(s) you have are {items}")
+        if sword and shield in items:
+            print("To show his appreciation, the alchemist turns your sword to gold!")
+            print("Your gold sword now does more damage and your shield has more defense")
+            sword.name = "Golden Sword"
+            sword.damage = "80 damage"
+            shield.name = "Golden shield"
+            shield.defense = "+40 defense"
+        elif sword in items:
+            print("To show his appreciation, the alchemist turns your shield to gold!")
+            print("Your gold sword now does more damage")
+            sword.name = "Golden Sword"
+            sword.damage = "80 damage"
+        elif shield in items:
+            print("To show his appreciation, the alchemist turns your shield to gold!")
+            print("Your gold shield now has better defense abilities")
+            shield.name = "Golden shield"
+            shield.defense = "+40 defense"
+        else:
+            print("The alchemist is very grateful to you, and wants to show his appreciation")
+            print("    ")
+            print("However, you don't have any weapons for the alchemist to work his craft on")
+            print("    ")
+            print("He gives you 10 coins and sends you on your way")
+            print("+10 coins")
+            coins.append(10)
     x = sum(coins)
     print("Now that you've met all the villagers, you've reached the village leader's house!")
     print("    ")
     print("Time to get your friend back!")
     print("    ")
-    print("Before you enter, which approach would you like to take?")
+    print("Before you enter, which approach would you like to take? ")
     print(f"the weapon(s) you have are {items}")
-    choice4 = input("stealthy or aggressive").lower()
+    choice4 = input("Stealthy or aggressive? ").lower()
     if choice4 == "stealthy":
         print(f"You have {x} coins")
         print("You sneak past the village leader and his guards and find your friend in the dungeons!")
@@ -193,7 +198,7 @@ while restart == "yes":
             if x < 7:
                 print("Better luck next time😢")
         if "Iron sword" and "Iron armor" == items:
-            print("You have barely the necessities for this fight, but I think we can make in work")
+            print("You have barely the necessities for this fight, but I think we can make it work")
             print("You fight like there is no tomorrow for your friend, and after a long and tired battle, you've emerged victorious")
             print("Exhaused and weak, you and your friend trek home")
             print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
