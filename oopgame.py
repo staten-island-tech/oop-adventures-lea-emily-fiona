@@ -180,7 +180,7 @@ while restart == "yes":
             print("Good job, you have collected a golden sword and kept your lives up, you have the ability to defeat the village leader")
             print("After a tiring and eventful battle, you've defeated the village leader and rescued your friend")
             print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-        if "Iron Shield" or "Gold Shield" or "Gold Sword" != items and lives > 3:
+        if "Iron Shield" or "Gold Shield" or "Gold Sword" != items and lives < 3:
             print("You've made many poor decisions in our village, and it will show in this battle")
             print("You have no effective weapon and not enough lives to last very long")
             print("You lost to the village chief and you and your friend are stuck there...")
