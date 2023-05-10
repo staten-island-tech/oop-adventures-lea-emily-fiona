@@ -7,11 +7,6 @@ class potions(objects):
     def __init__(self, name, use):
         super().__init__(name, use)
 
-class healing_potion(potions):
-    def __init__(self, name, use, healing):
-        super().__init__(name, use)
-        self.healing = healing
-
 class gold(objects):
     def __init__(self, name, use):
         super().__init__(name, use)
