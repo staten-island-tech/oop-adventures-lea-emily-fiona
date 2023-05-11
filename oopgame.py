@@ -37,7 +37,7 @@ while restart == "yes":
             print("+1", sword.name)
             print("+5 coins")
             print("Your", sword.name, "does", sword.damage)
-            items.append("Iron sword")
+            items.append(sword)
             coins.append(5)
         elif iron == "n":
             print("He's mad and yells at you")
@@ -80,8 +80,8 @@ while restart == "yes":
         print("+1", armor.name)
         print("The", shield.name, "gives you", shield.defense)
         print("The", armor.name, "gives you", armor.defense)
-        items.append("Iron shield")
-        items.append("Iron Armor")
+        items.append(armor)
+        items.append(shield)
     print("After your visit, you continue walking")
     print("    ")
     print("Here at this fork you'll meet your last villager")
@@ -100,16 +100,20 @@ while restart == "yes":
         print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
         print("    ")
         print(f"the weapon(s) you have are {items}")
-        if "Iron Sword" in items:
-            print("To show his appreciation, the alchemist turns your sword to gold!")
-            print("Your gold sword now does more damage")
-            items.remove("Iron sword")
-            items.append("Gold sword")
-        elif "Iron shield" in items:
+        if sword and shield in items:
+            print("To show his appreciation, the alchemist turns your sword and shield into gold!")
+            sword.name = "Golden Sword"
+            sword.damage = "80 damage"
+            shield.name = "Golden shield"
+            shield.defense = "+40 defense"
+            print("Your", sword.name, "stats are", sword.damage)
+            print("Your", shield.name, "gives you", shield.defense)
+        elif shield in items:
             print("To show his appreciation, the alchemist turns your shield to gold!")
             print("Your gold shield now has better defense abilities")
-            items.remove("Iron shield")
-            items.append("Gold shield")
+            shield.name = "Golden shield"
+            shield.defense = "+40 defense"
+            print("Your", shield.name, "gives you", shield.defense)
         else:
             print("The alchemist is very grateful to you, and wants to show his appreciation")
             print("    ")
