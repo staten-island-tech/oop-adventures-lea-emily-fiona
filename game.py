@@ -8,13 +8,11 @@ while restart == "yes":
     start = input("y/n").lower()
     while start != "y":
         print("That is not an option! Try again")
-        start = input("y/n").lower()
+        start = input("y/n ").lower()
     if start == "y":
         print("Then let's begin...")
-        break
     elif start == "n":
         print("Too bad!")
-        break
     print("    ")
     print("Your friend has been captured by the leader of a village far, far away")
     print("    ")
@@ -27,7 +25,7 @@ while restart == "yes":
     choice1 = input("blacksmith or villager: ").lower()
     if choice1 == "blacksmith":
         print("The blacksmith asks for your help to find iron")
-        iron = input("Do you help him? y/n").lower()
+        iron = input("Do you help him? y/n ").lower()
         if iron == "y":
             print("    ")
             print("On your quest to find iron, you trip and fall")
