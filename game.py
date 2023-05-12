@@ -128,17 +128,17 @@ while restart == "yes":
             print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
             print("    ")
             print(f"the weapon(s) you have are {items}")
-            if "sword" == items:
+            if "Iron sword" in items:
                 print("To show his appreciation, the alchemist turns your sword to gold!")
                 print("Your gold sword now does more damage")
                 items.remove("Iron sword")
                 items.append("Gold sword")
-            elif "sword" != items and "shield" == items:
+            elif "Iron sword" not in items and "Iron shield" in items:
                 print("To show his appreciation, the alchemist turns your shield to gold!")
                 print("Your gold shield now has better defense abilities")
                 items.remove("Iron shield")
                 items.append("Gold shield")
-            elif "sword" != items and "shield" != items:
+            elif "Iron sword" not in items and "Iron shield" not in items:
                 print("The alchemist is very grateful to you, and wants to show his appreciation")
                 print("    ")
                 print("However, you don't have any weapons for the alchemist to work his craft on")
@@ -155,26 +155,26 @@ while restart == "yes":
     print("Time to get your friend back!")
     print("    ")
     print("Before you enter, which approach would you like to take?")
-    print(f"the weapon(s) you have are {items}")
+    print(f"You have {lives} lives and these items: {items}")
     while choice4 != "stealthy" or "aggressive":
         choice4 = input("stealthy or aggressive: ").lower()
         if choice4 == "stealthy":
             print(f"You have {x} coins")
             print("You sneak past the village leader and his guards and find your friend in the dungeons!")
-            if "gold sword" == items:
+            if "Gold sword" in items:
                 print("You slash through the bars of the dungeon with your gold sword and your friend is saved!")
                 print("The two of you sneak out of the dungeon, back past the village leader and his guards, and travel home")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-            elif "sword" == items:
+            elif "Iron sword" in items:
                 print("With great difficulty, you slash through the bars of iron detaining your friend")
                 print("Finally, you break through, and your friend comes out, hungry, tired, and ready to go home")
                 print("The two of you leave the dungeon and trek home")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-            elif "gold shield" == items:
+            elif "Gold shield" in items:
                 print("You wedge your gold shield under the bars of the dungeon and pry them open")
                 print("Your friend crawls out, and the two of you sneak out of the dungeon, back past the village leader and his guards, and travel home")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-            elif "shield" == items:
+            elif "Iron shield" in items:
                 print("You try to use your shield to dent open the bars of the dungeon, but the force is too great and the shield snaps")
                 print("You try to look around and find anohter way to save him, but to no avail")
                 print("You and your friend are stuck down there...")
@@ -184,9 +184,10 @@ while restart == "yes":
                     print("Good news!!")
                     print("You have enough coins to restart!")
                     restart = input("Would you like to restart? y/n").lower()
-                if x < 7:
+                elif x < 7:
                     print("Better luck next time😢")
-            elif "gold sword" != items and "sword" != items and "gold shield" != items and "shield" != items:
+                    restart = "no"
+            elif "gold sword" not in items and "sword" not in items and "gold shield" not in items and "shield" not in items:
                 print("You find your friend, but see he is trapped behind heavy iron bars")
                 print("In vain, you look around for something to rescue them with")
                 print("However, after about an hour of looking and thinking, you come to your senses")
@@ -198,20 +199,20 @@ while restart == "yes":
                     print("Good news!!")
                     print("You have enough coins to restart!")
                     restart = input("Would you like to restart? y/n").lower()
-                if x < 7:
+                elif x < 7:
                     print("Better luck next time😢")
+                    restart = "no"
             break
         if choice4 == "aggressive":
             print(f"You have {x} coins")
             print("You seek out the village chief, with intent to harm, however, because of how reckless you were being, he snuck up on you")
             print("-1 life")
             lives = (lives-1)
-            print(f"You have {lives} lives and these items: {items}")
-            if "Gold sword" == items and lives >= 3:
+            if "Gold sword" in items and lives >= 3:
                 print("Good job, you have collected a golden sword and kept your lives up, you have the ability to defeat the village leader")
                 print("After a tiring and eventful battle, you've defeated the village leader and rescued your friend")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-            elif "Iron Shield" or "Gold Shield" or "Gold Sword" != items and lives < 3:
+            elif "Iron Shield" not in items and "Gold Shield" not in items and "Gold Sword" not in items and lives < 3:
                 print("You've made many poor decisions in our village, and it will show in this battle")
                 print("You have no effective weapon and not enough lives to last very long")
                 print("You lost to the village chief and you and your friend are stuck there...")
@@ -221,19 +222,32 @@ while restart == "yes":
                     print("Good news!!")
                     print("You have enough coins to restart!")
                     restart = input("Would you like to restart? yes/no").lower()
-                if x < 7:
+                elif x < 7:
                     print("Better luck next time😢")
-            if "Iron sword" and "Iron armor" == items:
+                    restart = "no"
+            elif "Iron sword" in items and "Iron armor" in items:
                 print("You have barely the necessities for this fight, but I think we can make in work")
                 print("You fight like there is no tomorrow for your friend, and after a long and tired battle, you've emerged victorious")
                 print("Exhaused and weak, you and your friend trek home")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-            if "Gold shield" == items and lives >= 3:
+            elif "Gold shield" in items and lives >= 3:
                 print("You clutch your gold shield tight, confident you will win your friend back")
                 print("And you were right!")
                 print("The battle was tough, but the village leader could not break through your defenses")
                 print("He gives up and gives you your friend as a means of surrender")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
+            else:
+                print("You have a few items and rationed your lives well, but unfortunately it will not be enough")
+                print("You lost to the village chief and you and your friend are stuck there...")
+                print("...forever")
+                if x >= 7:
+                    print("OH!")
+                    print("Good news!!")
+                    print("You have enough coins to restart!")
+                    restart = input("Would you like to restart? yes/no").lower()
+                elif x < 7:
+                    print("Better luck next time😢")
+                    restart = "no"
             break
         elif choice4 != "stealthy" or "aggressive":
             print("that's not an option, sorry!")
