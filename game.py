@@ -35,7 +35,7 @@ while restart == "yes":
             lives = (lives-1)
             print("    ")
             print("However, you do end up finding iron, and the blacksmith is very grateful")
-            print("    ")
+            print("     ")
             print("He gives you a sword and five pieces of gold to show his appreciation")
             sword.name = "Iron sword"
             sword.damage = "40 damage"
