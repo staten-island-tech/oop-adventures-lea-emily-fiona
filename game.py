@@ -5,14 +5,16 @@ while restart == "yes":
     coins = []
     items = []
     print("Hello! And welcome to the game! Are you ready to begin?")
-    start = input("y/n").lower()
+    start = input("y/n ").lower()
     while start != "y":
         print("That is not an option! Try again")
         start = input("y/n ").lower()
     if start == "y":
         print("Then let's begin...")
+        break
     elif start == "n":
         print("Too bad!")
+        break
     print("    ")
     print("Your friend has been captured by the leader of a village far, far away")
     print("    ")
