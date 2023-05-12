@@ -12,7 +12,7 @@ while restart == "yes":
     choice4 = []
     print("Hello! And welcome to the game! Are you ready to begin?")
     while start != "y":
-        start = input("y/n").lower()
+        start = input("y/n ").lower()
         if start == "y":
             print("Then let's begin...")
             break
