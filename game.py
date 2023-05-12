@@ -6,11 +6,15 @@ while restart == "yes":
     items = []
     print("Hello! And welcome to the game! Are you ready to begin?")
     start = input("y/n").lower()
+    while start != "y":
+        print("That is not an option! Try again")
+        start = input("y/n").lower()
     if start == "y":
         print("Then let's begin...")
-    if start == "n":
+        break
+    elif start == "n":
         print("Too bad!")
-    if start !=
+        break
     print("    ")
     print("Your friend has been captured by the leader of a village far, far away")
     print("    ")
@@ -100,27 +104,25 @@ while restart == "yes":
     elif choice3 == "alchemist":
         print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
         print("    ")
-        w = "Y"
-        while w == "Y":
-            print(f"the weapon(s) you have are {items}")
-            if "sword" == items:
-                print("To show his appreciation, the alchemist turns your sword to gold!")
-                print("Your gold sword now does more damage")
-                items.remove("Iron sword")
-                items.append("Gold sword")
-            elif "sword" != items and "shield" == items:
-                print("To show his appreciation, the alchemist turns your shield to gold!")
-                print("Your gold shield now has better defense abilities")
-                items.remove("Iron shield")
-                items.append("Gold shield")
-            elif "sword" != items and "shield" != items:
-                print("The alchemist is very grateful to you, and wants to show his appreciation")
-                print("    ")
-                print("However, you don't have any weapons for the alchemist to work his craft on")
-                print("    ")
-                print("He gives you 10 coins and sends you on your way")
-                print("+10 coins")
-                coins.append(10)
+        print(f"the weapon(s) you have are {items}")
+        if "Iron sword" in items:
+            print("To show his appreciation, the alchemist turns your sword to gold!")
+            print("Your gold sword now does more damage")
+            items.remove("Iron sword")
+            items.append("Gold sword")
+        elif "Iron shield" in items:
+            print("To show his appreciation, the alchemist turns your shield to gold!")
+            print("Your gold shield now has better defense abilities")
+            items.remove("Iron shield")
+            items.append("Gold shield")
+        elif "Iron sword" != items and "Iron shield" != items:
+            print("The alchemist is very grateful to you, and wants to show his appreciation")
+            print("    ")
+            print("However, you don't have any weapons for the alchemist to work his craft on")
+            print("    ")
+            print("He gives you 10 coins and sends you on your way")
+            print("+10 coins")
+            coins.append(10)
     x = sum(coins)
     print("Now that you've met all the villagers, you've reached the village leader's house!")
     print("    ")
