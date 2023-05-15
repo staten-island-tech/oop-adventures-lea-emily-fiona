@@ -161,7 +161,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? y/n").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
@@ -176,7 +176,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? y/n").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
