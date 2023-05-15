@@ -12,7 +12,7 @@ while restart == "yes":
     choice4 = []
     print("Hello! And welcome to the game! Are you ready to begin?")
     while start != "y":
-        start = input("y/n ").lower()
+        start = input("y/n").lower()
         if start == "y":
             print("Then let's begin...")
             break
@@ -186,10 +186,20 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    while restart != "yes" or "no":
+                        restart = input("Would you like to restart? y/n").lower()
+                        if restart == "y":
+                            restart = "yes"
+                            break
+                        elif restart == "n":
+                            restart = "no"
+                            break
+                        else:
+                            print("that's not an option, sorry!")
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
+                    break
             elif "gold sword" not in items and "sword" not in items and "gold shield" not in items and "shield" not in items:
                 print("You find your friend, but see he is trapped behind heavy iron bars")
                 print("In vain, you look around for something to rescue them with")
@@ -221,14 +231,16 @@ while restart == "yes":
                 print("You have no effective weapon and not enough lives to last very long")
                 print("You lost to the village chief and you and your friend are stuck there...")
                 print("...forever")
-                if x >= 7:
-                    print("OH!")
-                    print("Good news!!")
-                    print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
-                elif x < 7:
-                    print("Better luck next time😢")
-                    restart = "no"
+                while restart != "yes" or "no":
+                    if x >= 7:
+                        print("OH!")
+                        print("Good news!!")
+                        print("You have enough coins to restart!")
+                        restart = input("Would you like to restart? yes/no").lower()
+                    elif x < 7:
+                        print("Better luck next time😢")
+                        restart = "no"
+                    break
             elif "Iron sword" in items and "Iron armor" in items:
                 print("You have barely the necessities for this fight, but I think we can make in work")
                 print("You fight like there is no tomorrow for your friend, and after a long and tired battle, you've emerged victorious")
