@@ -31,11 +31,11 @@ while restart == "yes":
     print("You must choose...")
     print("Would you like to see the blacksmith or the villager")
     while choice1 != "blacksmith" or "villager":
-        choice1 = input("blacksmith or villager:").lower()
+        choice1 = input("blacksmith or villager: ").lower()
         if choice1 == "blacksmith":
             print("The blacksmith asks for your help to find iron")
             while start != "y" or "n":
-                iron = input("Do you help him? y/n").lower()
+                iron = input("Do you help him? y/n ").lower()
                 if iron == "y":
                     print("    ")
                     print("On your quest to find iron, you trip and fall")
@@ -77,7 +77,7 @@ while restart == "yes":
     print("Two houses stand before you, the villager's and the armorer's")
     print("Would you like to visit the villager or the armorer?")
     while choice2 != "armorer" or "villager":
-        choice2 = input("villager or armorer:").lower()
+        choice2 = input("villager or armorer: ").lower()
         if choice2 == "villager":
             print("You walk in, and the villager is sleeping")
             print("    ")
@@ -114,7 +114,7 @@ while restart == "yes":
     print("    ")
     print("Would you like to see the witch or the alchemist?")
     while choice3 != "witch" or "alchemist":
-        choice3 = input("witch or alchemist:").lower()
+        choice3 = input("witch or alchemist: ").lower()
         if choice3 == "witch":
             print("To your surprise, this witch is a good witch!")
             print("    ")
@@ -186,7 +186,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? yes/no ").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
@@ -201,7 +201,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? yes/no ").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
@@ -225,7 +225,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? yes/no ").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
@@ -250,7 +250,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? yes/no ").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
