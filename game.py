@@ -11,7 +11,11 @@ while restart == "yes":
     choice3 = []
     choice4 = []
     print("Hello! And welcome to the game! Are you ready to begin?")
+<<<<<<< Updated upstream
     while start != "y":
+=======
+    while start != "y" or "n":
+>>>>>>> Stashed changes
         start = input("y/n").lower()
         if start == "y":
             print("Then let's begin...")
@@ -19,7 +23,7 @@ while restart == "yes":
         elif start == "n":
             print("Too bad!")
             break
-        elif start != "y" or "n":
+        else:
             print("that's not an option, sorry!")    
     print("    ")
     print("Your friend has been captured by the leader of a village far, far away")
@@ -60,7 +64,7 @@ while restart == "yes":
                     print("-1 life")
                     lives = (lives-1)
                     break
-                elif iron != "y" or "n":
+                else:
                     print("that's not an option, sorry!")
             break
         elif choice1 == "villager":
@@ -70,7 +74,7 @@ while restart == "yes":
             print("+10 coins")
             coins.append(10)
             break
-        elif choice1 != "blacksmith" or "villager":
+        else:
             print("that's not an option, sorry!")
     print("You venture farther through the village and meet your next obstacle")
     print("    ")
@@ -106,7 +110,7 @@ while restart == "yes":
             items.append("Iron shield")
             items.append("Iron armor")
             break
-        elif choice2 != "armorer" or "villager":
+        else:
             print("that's not an option, sorry!")
     print("After your visit, you continue walking")
     print("    ")
@@ -147,7 +151,7 @@ while restart == "yes":
                 print("+10 coins")
                 coins.append(10)
             break
-        elif choice3 != "witch" or "alchemist":
+        else:
             print("that's not an option, sorry!")
     x = sum(coins)
     print("Now that you've met all the villagers, you've reached the village leader's house!")
@@ -165,18 +169,18 @@ while restart == "yes":
                 print("You slash through the bars of the dungeon with your gold sword and your friend is saved!")
                 print("The two of you sneak out of the dungeon, back past the village leader and his guards, and travel home")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-                restart = "no"
+                restart = input("Would you like to play again? yes/no").lower()
             elif "Iron sword" in items:
                 print("With great difficulty, you slash through the bars of iron detaining your friend")
                 print("Finally, you break through, and your friend comes out, hungry, tired, and ready to go home")
                 print("The two of you leave the dungeon and trek home")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-                restart = "no"
+                restart = input("Would you like to play again? yes/no").lower()
             elif "Gold shield" in items:
                 print("You wedge your gold shield under the bars of the dungeon and pry them open")
                 print("Your friend crawls out, and the two of you sneak out of the dungeon, back past the village leader and his guards, and travel home")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-                restart = "no"
+                restart = input("Would you like to play again? yes/no").lower()
             elif "Iron shield" in items:
                 print("You try to use your shield to dent open the bars of the dungeon, but the force is too great and the shield snaps")
                 print("You try to look around and find anohter way to save him, but to no avail")
@@ -225,7 +229,7 @@ while restart == "yes":
                 print("Good job, you have collected a golden sword and kept your lives up, you have the ability to defeat the village leader")
                 print("After a tiring and eventful battle, you've defeated the village leader and rescued your friend")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-                restart = "no"
+                restart = input("Would you like to play again? yes/no").lower()
             elif "Iron Shield" not in items and "Gold Shield" not in items and "Gold Sword" not in items and lives < 3:
                 print("You've made many poor decisions in our village, and it will show in this battle")
                 print("You have no effective weapon and not enough lives to last very long")
@@ -246,14 +250,14 @@ while restart == "yes":
                 print("You fight like there is no tomorrow for your friend, and after a long and tired battle, you've emerged victorious")
                 print("Exhaused and weak, you and your friend trek home")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-                restart = "no"
+                restart = input("Would you like to play again? yes/no").lower()
             elif "Gold shield" in items and lives >= 3:
                 print("You clutch your gold shield tight, confident you will win your friend back")
                 print("And you were right!")
                 print("The battle was tough, but the village leader could not break through your defenses")
                 print("He gives up and gives you your friend as a means of surrender")
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
-                restart = "no"
+                restart = input("Would you like to play again? yes/no").lower()
             else:
                 print("You have a few items and rationed your lives well, but unfortunately it will not be enough")
                 print("You lost to the village chief and you and your friend are stuck there...")
@@ -267,6 +271,6 @@ while restart == "yes":
                     print("Better luck next time😢")
                     restart = "no"
             break
-        elif choice4 != "stealthy" or "aggressive":
+        else:
             print("that's not an option, sorry!")
             
