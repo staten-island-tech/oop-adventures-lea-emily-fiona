@@ -25,8 +25,8 @@ while restart == "yes":
     print("    ")
     print("You must choose...")
     print("Would you like to see the blacksmith or the villager")
+    choice1 = input("blacksmith or villager: ").lower()
     while choice1 != "blacksmith" or "villager":
-        choice1 = input("blacksmith or villager: ").lower()
         if choice1 == "blacksmith":
             print("The blacksmith asks for your help to find iron")
             while start != "y" or "n":
