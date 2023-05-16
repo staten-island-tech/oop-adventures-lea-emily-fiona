@@ -25,99 +25,90 @@ while restart == "yes":
     print("    ")
     print("You must choose...")
     print("Would you like to see the blacksmith or the villager")
-    choice1 = input("blacksmith or villager: ").lower()
-    if choice1 == "blacksmith":
-        print("The blacksmith asks for your help to find iron")
-        iron = input("Do you help him? y/n ").lower()
-        if iron == "y":
+    while choice1 != "blacksmith" or "villager":
+        choice1 = input("blacksmith or villager: ").lower()
+        if choice1 == "blacksmith":
+            print("The blacksmith asks for your help to find iron")
+            while start != "y" or "n":
+                iron = input("Do you help him? y/n ").lower()
+                if iron == "y":
+                    print("    ")
+                    print("On your quest to find iron, you trip and fall")
+                    print("-1 life")
+                    lives = (lives-1)
+                    print("    ")
+                    print("However, you do end up finding iron, and the blacksmith is very grateful")
+                    print("    ")
+                    print("He gives you a sword and five pieces of gold to show his appreciation")
+                    sword.name = "Iron sword"
+                    sword.damage = "40 damage"
+                    print("+1", sword.name)
+                    print("+5 coins")
+                    print("Your", sword.name, "does", sword.damage)
+                    items.append("Iron sword")
+                    coins.append(5)
+                    break
+                elif iron == "n":
+                    print("He's mad and yells at you")
+                    print("    ")
+                    print("You take emotional damage")
+                    print("-1 life")
+                    lives = (lives-1)
+                    break
+                elif iron != "y" or "n":
+                    print("that's not an option, sorry!")
+            break
+        elif choice1 == "villager":
+            print("The villager isn't home, but you see a chest in his home!")
             print("    ")
-            print("On your quest to find iron, you trip and fall")
-            print("-1 life")
-            lives = (lives-1)
-            print("    ")
-            print("However, you do end up finding iron, and the blacksmith is very grateful")
-            print("    ")
-            print("He gives you a sword and five pieces of gold to show his appreciation")
-            sword.name = "Iron sword"
-            sword.damage = "40 damage"
-            print("+1", sword.name)
-            print("+5 coins")
-            print("Your", sword.name, "does", sword.damage)
-            items.append("Iron sword")
-            coins.append(5)
-        elif iron == "n":
-            print("He's mad and yells at you")
-            print("    ")
-            print("You take emotional damage")
-            print("-1 life")
-            lives = (lives-1)
-    elif choice1 == "villager":
-        print("The villager isn't home, but you see a chest in his home!")
-        print("    ")
-        print("You open the chest and find coins!")
-        print("+10 coins")
-        coins.append(10)
+            print("You open the chest and find coins!")
+            print("+10 coins")
+            coins.append(10)
     print("You venture farther through the village and meet your next obstacle")
     print("    ")
     print("Two houses stand before you, the villager's and the armorer's")
     print("Would you like to visit the villager or the armorer?")
-    choice2 = input("villager or armorer: ").lower()
-    if choice2 == "villager":
-        print("You walk in, and the villager is sleeping")
-        print("    ")
-        print("While walking around, you step on a squeaky floorboard")
-        print("    ")
-        print("The noise awakens the villager and he punches you for interrupting his beauty sleep!")
-        print("-2 lives")
-        lives = (lives-2)
-    elif choice2 == "armorer":
-        armor.defense = "+20 defense"
-        armor.name = "Iron armor"
-        shield.defense = "+20 defense"
-        shield.name = "Iron shield"
-        print("The armorer is pleasantly surprised by your visit, and wants to help you")
-        print("    ")
-        print("He says he's going to teach you how to make defensive items!")
-        print("    ")
-        print("After hours of working and talking, together you've made armor and a shield!")
-        print("    ")
-        print("The armorer decides he likes you, and he let's you keep the armor and shield!")
-        print("+1", shield.name)
-        print("+1", armor.name)
-        print("The", shield.name, "gives you", shield.defense)
-        print("The", armor.name, "gives you", armor.defense)
-        items.append("Iron shield")
-        items.append("Iron Armor")
+    while choice2 != "armorer" or "villager":
+        choice2 = input("villager or armorer: ").lower()
+        if choice2 == "villager":
+            print("You walk in, and the villager is sleeping")
+            print("    ")
+            print("While walking around, you step on a squeaky floorboard")
+            print("    ")
+            print("The noise awakens the villager and he punches you for interrupting his beauty sleep!")
+            print("-2 lives")
+            lives = (lives-2)
+            break
+        elif choice2 == "armorer":
+            armor.defense = "+20 defense"
+            armor.name = "Iron armor"
+            shield.defense = "+20 defense"
+            shield.name = "Iron shield"
+            print("The armorer is pleasantly surprised by your visit, and wants to help you")
+            print("    ")
+            print("He says he's going to teach you how to make defensive items!")
+            print("    ")
+            print("After hours of working and talking, together you've made armor and a shield!")
+            print("    ")
+            print("The armorer decides he likes you, and he let's you keep the armor and shield!")
+            print("+1", shield.name)
+            print("+1", armor.name)
+            print("The", shield.name, "gives you", shield.defense)
+            print("The", armor.name, "gives you", armor.defense)
+            items.append("Iron shield")
+            items.append("Iron armor")
+            break
+        elif choice2 != "armorer" or "villager":
+            print("that's not an option, sorry!")
     print("After your visit, you continue walking")
     print("    ")
     print("Here at this fork you'll meet your last villager")
     print("    ")
     print("Would you like to see the witch or the alchemist?")
-    choice3 = input("witch or alchemist: ").lower()
-    if choice3 == "witch":
-        print("To your surprise, this witch is a good witch!")
-        print("    ")
-        potions.name = "healing potion"
-        potions.use = "your lives get restored!"
-        print("She gives you a", potions.name, "and", potions.use)
-        print("reset - you now have 5 lives")
-        lives = 5
-    elif choice3 == "alchemist":
-        print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
-        print("    ")
-        print(f"the weapon(s) you have are {items}")
-        if "Iron sword" in items:
-            print("To show his appreciation, the alchemist turns your sword to gold!")
-            print("Your gold sword now does more damage")
-            items.remove("Iron sword")
-            items.append("Gold sword")
-        elif "Iron shield" in items:
-            print("To show his appreciation, the alchemist turns your shield to gold!")
-            print("Your gold shield now has better defense abilities")
-            items.remove("Iron shield")
-            items.append("Gold shield")
-        elif "Iron sword" != items and "Iron shield" != items:
-            print("The alchemist is very grateful to you, and wants to show his appreciation")
+    while choice3 != "witch" or "alchemist":
+        choice3 = input("witch or alchemist: ").lower()
+        if choice3 == "witch":
+            print("To your surprise, this witch is a good witch!")
             print("    ")
             print("However, you don't have any weapons for the alchemist to work his craft on")
             print("    ")
@@ -161,7 +152,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? yes/no ").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
@@ -176,7 +167,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? yes/no ").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
@@ -200,7 +191,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? yes/no ").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
@@ -225,7 +216,7 @@ while restart == "yes":
                     print("OH!")
                     print("Good news!!")
                     print("You have enough coins to restart!")
-                    restart = input("Would you like to restart? yes/no").lower()
+                    restart = input("Would you like to restart? yes/no ").lower()
                 elif x < 7:
                     print("Better luck next time😢")
                     restart = "no"
