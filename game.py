@@ -71,6 +71,8 @@ while restart == "yes":
             print("+10 coins")
             coins.append(10)
             break
+        elif choice1 != "villager" or "blacksmith":
+            print("That is not an option, sorry!")
     print("You venture farther through the village and meet your next obstacle")
     print("    ")
     print("Two houses stand before you, the villager's and the armorer's")
