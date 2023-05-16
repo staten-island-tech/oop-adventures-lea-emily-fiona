@@ -4,6 +4,12 @@ while restart == "yes":
     lives = 5
     coins = []
     items = []
+    choice1 = []
+    start = []
+    iron = []
+    choice2 = []
+    choice3 = []
+    choice4 = []
     print("Hello! And welcome to the game! Are you ready to begin?")
     start = input("y/n ").lower()
     while start != "y":
@@ -25,8 +31,8 @@ while restart == "yes":
     print("    ")
     print("You must choose...")
     print("Would you like to see the blacksmith or the villager")
-    choice1 = input("blacksmith or villager: ").lower()
     while choice1 != "blacksmith" or "villager":
+        choice1 = input("blacksmith or villager: ").lower()
         if choice1 == "blacksmith":
             print("The blacksmith asks for your help to find iron")
             while start != "y" or "n":
