@@ -12,6 +12,7 @@ while restart == "yes":
     choice3 = []
     choice4 = []
     print("Hello! And welcome to the game! Are you ready to begin?")
+    sleep(1)
     while start != "y":
         start = input("y/n ").lower()
         if start == "y":
@@ -44,6 +45,7 @@ while restart == "yes":
                 if iron == "y":
                     sleep(2)
                     print("On your quest to find iron, you trip and fall")
+                    sleep(1.5)
                     print("-1 life")
                     lives = (lives-1)
                     sleep(2)
