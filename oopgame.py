@@ -1,4 +1,4 @@
-from objects import *
+from classes import *
 lives = 5
 coins = []
 items = []
