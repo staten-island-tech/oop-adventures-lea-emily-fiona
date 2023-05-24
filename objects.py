@@ -112,3 +112,4 @@ class witch(villager):
         sleep(medsleep)
         print("reset : you now have 5 lives")
         lives = 5
+        
