@@ -36,17 +36,16 @@ while restart == "yes":
     while choice1 != "blacksmith" or "villager":
         choice1 = input("blacksmith or villager:").lower()
         if choice1 == "blacksmith":
-            def black_smith():
-                blacksmith
-            black_smith()
+            print("The blacksmith asks for your help to find iron")
+            sleep(1)
             while iron != "y" or "n":
                 iron = input("Do you help him? y/n").lower()
                 if iron == "y":
                     def side_quest():
                         blacksmith_iron
                     side_quest()
-                    blacksmith.impact = items.append("Iron sword")
-                    blacksmith.impact = coins.append(5)
+                    blacksmith.service = items.append("Iron sword")
+                    blacksmith.service = coins.append(5)
                     break
                 elif iron == "n":
                     sleep(2)
@@ -67,6 +66,7 @@ while restart == "yes":
                 print("You open the chest and find coins!")
                 sleep(1.5)
                 villager
+            village()
             break
         else:
             print("that's not an option, sorry!")
@@ -86,10 +86,6 @@ while restart == "yes":
             lives = (lives-2)
             break
         elif choice2 == "armorer":
-            armor.defense = "+20 defense"
-            armor.name = "Iron armor"
-            shield.defense = "+20 defense"
-            shield.name = "Iron shield"
             print("The armorer is pleasantly surprised by your visit, and wants to help you")
             sleep(2)
             print("He says he's going to teach you how to make defensive items!")
@@ -98,9 +94,7 @@ while restart == "yes":
             sleep(2)
             print("The armorer decides he likes you, and he let's you keep the armor and shield!")
             sleep(1.5)
-            def armor_give():
-                armorer
-            armor_give()
+            armorer
             break
         else:
             print("that's not an option, sorry!")
@@ -119,31 +113,9 @@ while restart == "yes":
             healer()
             break
         elif choice3 == "alchemist":
-            print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
-            sleep(2)
-            print(f"the weapon(s) you have are {items}")
-            sleep(1)
-            if "Iron sword" in items:
-                print("To show his appreciation, the alchemist turns your sword to gold!")
-                sleep(1.5)
-                print("Your gold sword now does more damage")
-                items.remove("Iron sword")
-                items.append("Gold sword")
-            elif "Iron sword" not in items and "Iron shield" in items:
-                print("To show his appreciation, the alchemist turns your shield to gold!")
-                sleep(1.5)
-                print("Your gold shield now has better defense abilities")
-                items.remove("Iron shield")
-                items.append("Gold shield")
-            elif "Iron sword" not in items and "Iron shield" not in items:
-                print("The alchemist is very grateful to you, and wants to show his appreciation")
-                sleep(2)
-                print("However, you don't have any weapons for the alchemist to work his craft on")
-                sleep(2)
-                print("He gives you 10 coins and sends you on your way")
-                sleep(1.5)
-                print("+10 coins")
-                coins.append(10)
+            def alchemy():
+                alchemist
+            alchemy()
             break
         else:
             print("that's not an option, sorry!")
