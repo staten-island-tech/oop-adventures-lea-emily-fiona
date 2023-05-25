@@ -49,9 +49,6 @@ class weapon(objects):
 class sword(weapon):
     def __init__(self, use, name, damage):
         super().__init__(use, name, damage)
-        
-
-
 
 class user():
     def __init__(self, lives, coins, items, restart):
