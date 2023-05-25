@@ -44,11 +44,9 @@ while restart == "yes":
             while iron != "y" or "n":
                 iron = input("Do you help him? y/n").lower()
                 if iron == "y":
-                    def side_quest():
-                        blacksmith_iron
-                    side_quest()
-                    blacksmith.service = items.append("Iron sword")
-                    blacksmith.service = coins.append(5)
+                    print(blacksmith_iron.side_quest)
+                    items.append("Iron sword")
+                    coins.append(5)
                     break
                 elif iron == "n":
                     sleep(longsleep)
