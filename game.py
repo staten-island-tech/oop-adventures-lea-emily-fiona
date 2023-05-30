@@ -44,7 +44,8 @@ while restart == "yes":
             while iron != "y" or "n":
                 iron = input("Do you help him? y/n").lower()
                 if iron == "y":
-                    print(blacksmith_iron.side_quest)
+                    black = blacksmith_iron(abc)
+                    black.side_quest()                    
                     items.append("Iron sword")
                     coins.append(5)
                     break
@@ -66,7 +67,8 @@ while restart == "yes":
                 sleep(longsleep)
                 print("You open the chest and find coins!")
                 sleep(medsleep)
-                villager
+                villager.impact
+                villager.service
             village()
             break
         else:

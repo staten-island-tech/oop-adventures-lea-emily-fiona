@@ -32,11 +32,12 @@ def abc():
     print("+5 coins")
     sleep(2)
     print(f"Your {sword.name} does {sword.damage} damage")
+abc()
 
 class blacksmith_iron(objects):
-    def __init__(self, name, use):
+    def __init__(self, name, use, side_quest):
         super().__init__(name, use)
-        self.side_quest = abc()
+        self.side_quest = side_quest
 
 class armor(objects):
     def __init__(self, name, use, defense):
@@ -82,10 +83,7 @@ class user():
         self.coins = coins
         self.items = items
         self.restart = restart
-    lives = 5
-    coins = []
-    items = []
-    restart = "yes"
+
 class  villager(user):
     def __init__(self, service, coins, items):
         super().__init__(coins, items)
