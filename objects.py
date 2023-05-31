@@ -17,7 +17,22 @@ class gold(objects):
     def __init__(self, name, use):
         super().__init__(name, use)
 
+class weapon(objects):
+    def __init__(self, use, name, damage):
+        super().__init__(name, use)
+        self.damage = damage
+
+
+class sword(weapon):
+    def __init__(self, use, name, damage):
+        super().__init__(use, name, damage)
+        self.name = "Iron sword"
+        self.damage = 40
+
 def abc():
+    sworda = sword("use", "name_test", 5)
+    print(sworda)
+    lives = 5
     sleep(2)
     print("On your quest to find iron, you trip and fall")
     print("-1 life")
@@ -27,12 +42,11 @@ def abc():
     sleep(2)
     print("He gives you a sword and five pieces of gold to show his appreciation")
     sleep(1.5)
-    print(f"+1, {sword.name}")
+    print(f"+1, {sworda.name}")
     sleep(1.5)
     print("+5 coins")
     sleep(2)
-    print(f"Your {sword.name} does {sword.damage} damage")
-abc()
+    print(f"Your {sworda.name} does {sworda.damage} damage")
 
 class blacksmith_iron(objects):
     def __init__(self, name, use, side_quest):
@@ -58,16 +72,8 @@ class shield2(shield):
         shield.defense = 40
         shield.name = "Gold shield"
 
-class weapon(objects):
-    def __init__(self, use, name, damage):
-        super().__init__(name, use)
-        self.damage = damage
 
-class sword(weapon):
-    def __init__(self, use, name, damage):
-        super().__init__(use, name, damage)
-        self.name = "Iron sword"
-        self.damage = 40
+
 
 class sword2(sword):
     def __init__(self, use, name, damage):
@@ -83,7 +89,10 @@ class user():
         self.coins = coins
         self.items = items
         self.restart = restart
-
+    lives = 5
+    coins = []
+    items = []
+    restart = "yes"
 class  villager(user):
     def __init__(self, service, coins, items):
         super().__init__(coins, items)

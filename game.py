@@ -1,19 +1,19 @@
 from time import sleep
 restart = "yes"
+from objects import *
 while restart == "yes":
-    from objects import *
     longsleep = 2
     medsleep = 1.5
     shortsleep = 1
     lives = 5
     coins = []
     items = []
-    choice1 = []
-    start = []
-    iron = []
-    choice2 = []
-    choice3 = []
-    choice4 = []
+    choice1 = ""
+    start = ""
+    iron = ""
+    choice2 = ""
+    choice3 = ""
+    choice4 = ""
     print("Hello! And welcome to the game! Are you ready to begin?")
     while start != "y" or "n":
         start = input("y/n").lower()
@@ -44,8 +44,7 @@ while restart == "yes":
             while iron != "y" or "n":
                 iron = input("Do you help him? y/n").lower()
                 if iron == "y":
-                    black = blacksmith_iron(abc)
-                    black.side_quest()                    
+                    sidequest = blacksmith_iron("help", "iron", abc())
                     items.append("Iron sword")
                     coins.append(5)
                     break
@@ -56,6 +55,7 @@ while restart == "yes":
                     print("You take emotional damage")
                     sleep(medsleep)
                     blacksmith.impact = print("-1 life")
+                    print(lives)
                     lives = (lives-1)
                     break
                 else:
@@ -231,7 +231,7 @@ while restart == "yes":
                 print("...forever")
                 sleep(longsleep)
                 if x >= 7:
-                    print("OH!")
+                    print("OH!") 
                     sleep(longsleep)
                     print("Good news!!")
                     sleep(longsleep)
