@@ -29,6 +29,7 @@ while restart == "yes":
             break
         else:
             print("that's not an option, sorry!") 
+            print("that's not an option, sorry!")    
     sleep(longsleep)
     print("Your friend has been captured by the leader of a village far, far away")
     sleep(longsleep)

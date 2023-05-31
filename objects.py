@@ -114,6 +114,8 @@ class armorer(villager):
         print("The", armor.name, "gives you", armor.defense)
         self.impact = items.append("Iron shield")
         self.impact = items.append("Iron armor")
+        self.impact = items.append(shield.name)
+        self.impact = items.append(armor.name)
 class witch(villager):
     def __init__(self, service, coins, items):
         super().__init__(service, coins, items, lives)
