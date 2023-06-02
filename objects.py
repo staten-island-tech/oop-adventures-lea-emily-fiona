@@ -4,6 +4,17 @@ class objects():
         self.name = name
         self.use = use
 
+class user():
+    def __init__(self, lives, coins, items, restart):
+        self.lives = lives
+        self.coins = coins
+        self.items = items
+        self.restart = restart
+    lives = 5
+    coins = []
+    items = []
+    restart = "yes"
+
 class potions(objects):
     def __init__(self, name, use):
         super().__init__(name, use)
@@ -30,7 +41,7 @@ class sword(weapon):
         self.damage = 40
 
 def abc():
-    sworda = sword("use", "name_test", 5)
+    sworda = sword("use", "Iron Sword", 40)
     print(sworda)
     lives = 5
     sleep(2)
@@ -47,6 +58,7 @@ def abc():
     print("+5 coins")
     sleep(2)
     print(f"Your {sworda.name} does {sworda.damage} damage")
+    user.items.append(sworda.name)
 
 class blacksmith_iron(objects):
     def __init__(self, name, use, side_quest):
@@ -81,24 +93,13 @@ class sword2(sword):
         self.name = "Gold sword"
         self.damage = 80
 
-
-
-class user():
-    def __init__(self, lives, coins, items, restart):
-        self.lives = lives
-        self.coins = coins
-        self.items = items
-        self.restart = restart
-    lives = 5
-    coins = []
-    items = []
-    restart = "yes"
-class  villager(user):
+class villager(user):
     def __init__(self, service, coins, items):
         super().__init__(coins, items)
         self.service = service
         self.impact = print("+10 coins")
         self.service = coins.append(10)
+
 class sleeping_villager(villager):
     def __init__(self, service):
         super().__init__(service)
@@ -109,11 +110,13 @@ class sleeping_villager(villager):
         print("The noise awakens the villager and he punches you for interrupting his beauty sleep!")
         sleep(1.5)
         print("-2 lives")
+
 class blacksmith(villager):
     def __init__(self, service, coins, items, impact):
         super().__init__(service, coins, items)
         blacksmith.impact = impact
         blacksmith.impact = blacksmith_iron.side_quest()
+
 class armorer(villager):
     def __init__(self, service, coins, items):
         super().__init__(service, coins, items)
@@ -138,34 +141,47 @@ class witch(villager):
         sleep(1.5)
         print("reset : you now have 5 lives")
         lives = 5
+
+def alchemisttransform():
+    sworda = sword("use", "Iron Sword", 40)
+    swordb = sword2("use", "Golden Sword", 80)
+    shielda = shield("use", "Iron shield", 20)
+    shieldb = shield2("use", "Golden Shield", 40)
+    print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
+    sleep(2)
+    print(f"the weapon(s) you have are {user.items}")
+    sleep(1)
+    if sworda.name in user.items:
+            print("To show his appreciation, the alchemist turns your sword to gold!")
+            sleep(1.5)
+            print(f"+1 {swordb.name}")
+            print(f"The {swordb.name} does {swordb.damage} damage")
+            user.items.remove(sworda.name)
+            user.items.append(swordb.name)
+    elif sworda.name not in user.items and shielda.name in user.items:
+            print("To show his appreciation, the alchemist turns your shield to gold!")
+            sleep(1.5)
+            print(f"+1 {shieldb.name}")
+            print(f"The {swordb.name} has {shieldb.defense} defense")
+            user.items.remove(shielda.name)
+            user.items.append(shielda.name)
+    elif sworda.name not in user.items and shielda.name not in user.items:
+            print("The alchemist is very grateful to you, and wants to show his appreciation")
+            sleep(2)
+            print("However, you don't have any weapons for the alchemist to work his craft on")
+            sleep(2)
+            print("He gives you 10 coins and sends you on your way")
+            sleep(1.5)
+            print("+10 coins")
+            user.coins.append(10)
+
+class alchemist_transform(objects):
+    def __init__(self, name, use, side_quest):
+        super().__init__(name, use)
+        self.side_quest = side_quest
+
 class alchemist(villager):
-    def __init__(self, service, items, coins):
+    def __init__(self, service, items, coins, impact):
         super().__init__(service, items, coins)
-        self.impact = print("The alchemist has been studying how to turn metal into gold, and upon your arrival, he makes his breakthrough!")
-        sleep(2)
-        user.items = items
-        print(f"the weapon(s) you have are {items}")
-        sleep(1)
-        if sword.name in user.items:
-                print("To show his appreciation, the alchemist turns your sword to gold!")
-                sleep(1.5)
-                print(f"+1 {sword2.name}")
-                print(f"The {sword2.name} does {sword2.damage} damage")
-                items.remove(sword.name)
-                self.impact = items.append(sword2.name)
-        elif sword.name not in items and shield.name in user.items:
-                print("To show his appreciation, the alchemist turns your shield to gold!")
-                sleep(1.5)
-                print(f"+1 {shield2.name}")
-                print(f"The {sword2.name} has {shield2.defense} defense")
-                items.remove(shield.name)
-                self.impact = items.append(shield2.name)
-        elif sword.name not in items and shield.name not in user.items:
-                print("The alchemist is very grateful to you, and wants to show his appreciation")
-                sleep(2)
-                print("However, you don't have any weapons for the alchemist to work his craft on")
-                sleep(2)
-                print("He gives you 10 coins and sends you on your way")
-                sleep(1.5)
-                print("+10 coins")
-                self.impact = coins.append(10)
+        self.impact = impact
+        self.sidequest = alchemist_transform.sidequest

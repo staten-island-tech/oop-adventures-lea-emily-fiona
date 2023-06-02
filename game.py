@@ -7,7 +7,7 @@ while restart == "yes":
     shortsleep = 1
     lives = 5
     coins = []
-    items = []
+    items = user.items
     choice1 = ""
     start = ""
     iron = ""
@@ -45,7 +45,6 @@ while restart == "yes":
                 iron = input("Do you help him? y/n").lower()
                 if iron == "y":
                     sidequest = blacksmith_iron("help", "iron", abc())
-                    items.append("Iron sword")
                     coins.append(5)
                     break
                 elif iron == "n":
@@ -55,8 +54,8 @@ while restart == "yes":
                     print("You take emotional damage")
                     sleep(medsleep)
                     blacksmith.impact = print("-1 life")
-                    print(lives)
                     lives = (lives-1)
+                    print("You now have", lives, "lives")
                     break
                 else:
                     print("that's not an option, sorry!")
@@ -116,9 +115,7 @@ while restart == "yes":
             healer()
             break
         elif choice3 == "alchemist":
-            def alchemy():
-                alchemist
-            alchemy()
+            sidequest = alchemist_transform("appreciate", "transform", alchemisttransform())
             break
         else:
             print("that's not an option, sorry!")
