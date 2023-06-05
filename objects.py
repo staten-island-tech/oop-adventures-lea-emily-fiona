@@ -1,3 +1,6 @@
+longsleep = 2
+medsleep = 1.5
+shortsleep = 1
 from time import sleep
 class objects():
     def __init__(self, name, use):
@@ -69,7 +72,11 @@ class sword2(sword):
         self.name = "Gold sword"
         self.damage = 80
 
-
+def vtalk():
+    print("The villager isn't home, but you see a chest in his home!")
+    sleep(longsleep)
+    print("You open the chest and find coins!")
+    sleep(medsleep)
 
 class user():
     def __init__(self, lives, coins, items, restart):
@@ -85,8 +92,7 @@ class  villager(user):
     def __init__(self, service, coins, items):
         super().__init__(coins, items)
         self.service = service
-        self.impact = print("+10 coins")
-        self.service = coins.append(10)
+        self.coins = coins.append(10)
 class sleeping_villager(villager):
     def __init__(self, service):
         super().__init__(service)

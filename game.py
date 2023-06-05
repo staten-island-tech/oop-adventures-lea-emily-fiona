@@ -67,6 +67,7 @@ while restart == "yes":
                     print("that's not an option, sorry!")
             break
         elif choice1 == "villager":
+<<<<<<< Updated upstream
             sleep(longsleep)
             print("The villager isn't home, but you see a chest in his home!")
             sleep(longsleep)
@@ -81,6 +82,10 @@ while restart == "yes":
                 sleep(medsleep)
                 villager
             village()
+=======
+            vt = villager(vtalk(), 10, '-')
+            print(coins)
+>>>>>>> Stashed changes
             break
         elif choice1 != "blacksmith" or "villager":
             print("that's not an option, sorry!")
