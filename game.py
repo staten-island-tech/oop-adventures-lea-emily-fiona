@@ -2,6 +2,13 @@ from time import sleep
 restart = "yes"
 from objects import *
 while restart == "yes":
+<<<<<<< HEAD
+=======
+    longsleep = 2
+    medsleep = 1.5
+    shortsleep = 1
+    from objects import *
+>>>>>>> game
     longsleep = 2
     medsleep = 1.5
     shortsleep = 1
@@ -15,6 +22,7 @@ while restart == "yes":
     choice3 = ""
     choice4 = ""
     print("Hello! And welcome to the game! Are you ready to begin?")
+    sleep(shortsleep)
     while start != "y" or "n":
         start = input("y/n").lower()
         if start == "y":
@@ -24,6 +32,7 @@ while restart == "yes":
             print("Too bad!")
             break
         else:
+            print("that's not an option, sorry!") 
             print("that's not an option, sorry!")    
     sleep(longsleep)
     print("Your friend has been captured by the leader of a village far, far away")
@@ -37,6 +46,7 @@ while restart == "yes":
     print("Would you like to see the blacksmith or the villager")
     sleep(shortsleep)
     while choice1 != "blacksmith" or "villager":
+        choice1 = input("blacksmith or villager: ").lower()
         choice1 = input("blacksmith or villager:").lower()
         if choice1 == "blacksmith":
             print("The blacksmith asks for your help to find iron")
@@ -57,10 +67,18 @@ while restart == "yes":
                     lives = (lives-1)
                     print("You now have", lives, "lives")
                     break
-                else:
+                elif iron != "y" or "n":
                     print("that's not an option, sorry!")
             break
         elif choice1 == "villager":
+<<<<<<< Updated upstream
+            sleep(longsleep)
+            print("The villager isn't home, but you see a chest in his home!")
+            sleep(longsleep)
+            print("You open the chest and find coins!")
+            sleep(medsleep)
+            print("+10 coins")
+            coins.append(10)
             def village():
                 print("The villager isn't home, but you see a chest in his home!")
                 sleep(longsleep)
@@ -69,8 +87,12 @@ while restart == "yes":
                 villager.impact
                 villager.service
             village()
+=======
+            vt = villager(vtalk(), 10, '-')
+            print(coins)
+>>>>>>> Stashed changes
             break
-        else:
+        elif choice1 != "blacksmith" or "villager":
             print("that's not an option, sorry!")
     sleep(longsleep)
     print("You venture farther through the village and meet your next obstacle")
@@ -80,8 +102,17 @@ while restart == "yes":
     print("Would you like to visit the villager or the armorer?")
     sleep(shortsleep)
     while choice2 != "armorer" or "villager":
+        choice2 = input("villager or armorer: ").lower()
         choice2 = input("villager or armorer:").lower()
         if choice2 == "villager":
+            sleep(longsleep)
+            print("You walk in, and the villager is sleeping")
+            sleep(longsleep)
+            print("While walking around, you step on a squeaky floorboard")
+            sleep(longsleep)
+            print("The noise awakens the villager and he punches you for interrupting his beauty sleep!")
+            sleep(medsleep)
+            print("-2 lives")
             def sleeper():
                 sleeping_villager
             sleeper()
@@ -98,7 +129,7 @@ while restart == "yes":
             sleep(medsleep)
             armorer
             break
-        else:
+        elif choice2 != "armorer" or "villager":
             print("that's not an option, sorry!")
     sleep(longsleep)
     print("After your visit, you continue walking")
@@ -108,8 +139,18 @@ while restart == "yes":
     print("Would you like to see the witch or the alchemist?")
     sleep(shortsleep)
     while choice3 != "witch" or "alchemist":
+        choice3 = input("witch or alchemist: ").lower()
         choice3 = input("witch or alchemist:").lower()
         if choice3 == "witch":
+            sleep(longsleep)
+            print("To your surprise, this witch is a good witch!")
+            sleep(longsleep)
+            potions.name = "healing potion"
+            potions.use = "your lives get restored!"
+            print("She gives you a", potions.name, "and", potions.use)
+            sleep(medsleep)
+            print("reset : you now have 5 lives")
+            lives = 5
             def healer():
                 witch
             healer()
@@ -117,7 +158,7 @@ while restart == "yes":
         elif choice3 == "alchemist":
             sidequest = alchemist_transform("appreciate", "transform", alchemisttransform())
             break
-        else:
+        elif choice3 != "witch" or "alchemist":
             print("that's not an option, sorry!")
     x = sum(coins)
     sleep(longsleep)
@@ -132,15 +173,18 @@ while restart == "yes":
         choice4 = input("stealthy or aggressive: ").lower()
         sleep(longsleep)
         if choice4 == "stealthy":
+            sleep(longsleep)
             print(f"You have {x} coins")
             sleep(longsleep)
             print("You sneak past the village leader and his guards and find your friend in the dungeons!")
             if "Gold sword" in items:
+                sleep(longsleep)
                 print("You slash through the bars of the dungeon with your gold sword and your friend is saved!")
                 sleep(longsleep)
                 print("The two of you sneak out of the dungeon, back past the village leader and his guards, and travel home")
                 sleep(longsleep)
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
+                restart = "no"
                 while restart != "yes" or "no":
                         restart = input("Would you like to play again? y/n").lower()
                         if restart == "y":
@@ -152,6 +196,7 @@ while restart == "yes":
                         else:
                             print("that's not an option, sorry!")
             elif "Iron sword" in items:
+                sleep(longsleep)
                 print("With great difficulty, you slash through the bars of iron detaining your friend")
                 sleep(longsleep)
                 print("Finally, you break through, and your friend comes out, hungry, tired, and ready to go home")
@@ -159,6 +204,7 @@ while restart == "yes":
                 print("The two of you leave the dungeon and trek home")
                 sleep(longsleep)
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
+                restart = "no"
                 while restart != "yes" or "no":
                         restart = input("Would you like to play again? y/n").lower()
                         if restart == "y":
@@ -170,11 +216,14 @@ while restart == "yes":
                         else:
                             print("that's not an option, sorry!")
             elif "Gold shield" in items:
+                sleep(longsleep)
                 print("You wedge your gold shield under the bars of the dungeon and pry them open")
                 sleep(longsleep)
                 print("Your friend crawls out, and the two of you sneak out of the dungeon, back past the village leader and his guards, and travel home")
                 sleep(longsleep)
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
+                sleep(longsleep)
+                restart = "no"
                 while restart != "yes" or "no":
                         restart = input("Would you like to play again? y/n").lower()
                         if restart == "y":
@@ -186,6 +235,7 @@ while restart == "yes":
                         else:
                             print("that's not an option, sorry!")
             elif "Iron shield" in items:
+                sleep(longsleep)
                 print("You try to use your shield to dent open the bars of the dungeon, but the force is too great and the shield snaps")
                 sleep(longsleep)
                 print("You try to look around and find anohter way to save him, but to no avail")
@@ -200,6 +250,8 @@ while restart == "yes":
                     print("Good news!!")
                     sleep(longsleep)
                     print("You have enough coins to restart!")
+                    sleep(longsleep)
+                    restart = input("Would you like to restart? yes/no ").lower()
                     while restart != "yes" or "no":
                         restart = input("Would you like to restart? y/n").lower()
                         if restart == "y":
@@ -215,6 +267,7 @@ while restart == "yes":
                     restart = "no"
                     break
             elif "gold sword" not in items and "sword" not in items and "gold shield" not in items and "shield" not in items:
+                sleep(longsleep)
                 print("You find your friend, but see he is trapped behind heavy iron bars")
                 sleep(longsleep)
                 print("In vain, you look around for something to rescue them with")
@@ -233,6 +286,8 @@ while restart == "yes":
                     print("Good news!!")
                     sleep(longsleep)
                     print("You have enough coins to restart!")
+                    sleep(longsleep)
+                    restart = input("Would you like to restart? yes/no ").lower()
                     while restart != "yes" or "no":
                         restart = input("Would you like to restart? y/n").lower()
                         if restart == "y":
@@ -248,6 +303,7 @@ while restart == "yes":
                     restart = "no"
             break
         if choice4 == "aggressive":
+            sleep(longsleep)
             print(f"You have {x} coins")
             sleep(longsleep)
             print("You seek out the village chief, with intent to harm, however, because of how reckless you were being, he snuck up on you")
@@ -256,11 +312,13 @@ while restart == "yes":
             sleep(longsleep)
             lives = (lives-1)
             if "Gold sword" in items and lives >= 3:
+                sleep(longsleep)
                 print("Good job, you have collected a golden sword and kept your lives up, you have the ability to defeat the village leader")
                 sleep(longsleep)
                 print("After a tiring and eventful battle, you've defeated the village leader and rescued your friend")
                 sleep(longsleep)
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
+                restart = "no"
                 while restart != "yes" or "no":
                         restart = input("Would you like to play again? y/n").lower()
                         if restart == "y":
@@ -272,6 +330,7 @@ while restart == "yes":
                         else:
                             print("that's not an option, sorry!")
             elif "Iron Shield" not in items and "Gold Shield" not in items and "Gold Sword" not in items and lives < 3:
+                sleep(longsleep)
                 print("You've made many poor decisions in our village, and it will show in this battle")
                 sleep(longsleep)
                 print("You have no effective weapon and not enough lives to last very long")
@@ -279,12 +338,15 @@ while restart == "yes":
                 print("You lost to the village chief and you and your friend are stuck there...")
                 sleep(longsleep)
                 print("...forever")
+                sleep(longsleep)
                 if x >= 7:
                     print("OH!")
                     sleep(longsleep)
                     print("Good news!!")
                     sleep(longsleep)
                     print("You have enough coins to restart!")
+                    sleep(longsleep)
+                    restart = input("Would you like to restart? yes/no ").lower()
                     while restart != "yes" or "no":
                         restart = input("Would you like to restart? y/n").lower()
                         if restart == "y":
@@ -299,6 +361,7 @@ while restart == "yes":
                     print("Better luck next time😢")
                     restart = "no"
             elif "Iron sword" in items and "Iron armor" in items:
+                sleep(longsleep)
                 print("You have barely the necessities for this fight, but I think we can make in work")
                 sleep(longsleep)
                 print("You fight like there is no tomorrow for your friend, and after a long and tired battle, you've emerged victorious")
@@ -306,6 +369,7 @@ while restart == "yes":
                 print("Exhaused and weak, you and your friend trek home")
                 sleep(longsleep)
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
+                restart = "no"
                 while restart != "yes" or "no":
                         restart = input("Would you like to play again? y/n").lower()
                         if restart == "y":
@@ -317,6 +381,7 @@ while restart == "yes":
                         else:
                             print("that's not an option, sorry!")
             elif "Gold shield" in items and lives >= 3:
+                sleep(longsleep)
                 print("You clutch your gold shield tight, confident you will win your friend back")
                 sleep(longsleep)
                 print("And you were right!")
@@ -326,6 +391,7 @@ while restart == "yes":
                 print("He gives up and gives you your friend as a means of surrender")
                 sleep(longsleep)
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
+                restart = "no"
                 while restart != "yes" or "no":
                         restart = input("Would you like to play again? y/n").lower()
                         if restart == "y":
@@ -337,6 +403,7 @@ while restart == "yes":
                         else:
                             print("that's not an option, sorry!")
             else:
+                sleep(longsleep)
                 print("You have a few items and rationed your lives well, but unfortunately it will not be enough")
                 sleep(longsleep)
                 print("You lost to the village chief and you and your friend are stuck there...")
@@ -349,6 +416,8 @@ while restart == "yes":
                     print("Good news!!")
                     sleep(longsleep)
                     print("You have enough coins to restart!")
+                    sleep(longsleep)
+                    restart = input("Would you like to restart? yes/no ").lower()
                     while restart != "yes" or "no":
                         restart = input("Would you like to restart? y/n").lower()
                         if restart == "y":
@@ -363,5 +432,8 @@ while restart == "yes":
                     print("Better luck next time😢")
                     restart = "no"
             break
+        elif choice4 != "stealthy" or "aggressive":
+            print("that's not an option, sorry!")
+            
         else:
-            print("that's not an option, sorry!")           
+            print("that's not an option, sorry!")   
