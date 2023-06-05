@@ -16,7 +16,7 @@ while restart == "yes":
     choice4 = ""
     print("Hello! And welcome to the game! Are you ready to begin?")
     while start != "y" or "n":
-        start = input("y/n").lower()
+        start = input("y/n ").lower()
         if start == "y":
             print("Then let's begin...")
             break
@@ -42,7 +42,7 @@ while restart == "yes":
             print("The blacksmith asks for your help to find iron")
             sleep(shortsleep)
             while iron != "y" or "n":
-                iron = input("Do you help him? y/n").lower()
+                iron = input("Do you help him? y/n ").lower()
                 if iron == "y":
                     sidequest = blacksmith_iron("help", "iron", abc())
                     coins.append(5)
@@ -82,9 +82,7 @@ while restart == "yes":
     while choice2 != "armorer" or "villager":
         choice2 = input("villager or armorer:").lower()
         if choice2 == "villager":
-            def sleeper():
-                sleeping_villager
-            sleeper()
+            sidequest = sleeping_villager("villager2", "losing life", interruptsleep())
             lives = (lives-2)
             break
         elif choice2 == "armorer":
@@ -115,7 +113,7 @@ while restart == "yes":
             healer()
             break
         elif choice3 == "alchemist":
-            sidequest = alchemist_transform("appreciate", "transform", alchemisttransform())
+            sidequest = alchemist_transform("alchemist", "transform", alchemisttransform())
             break
         else:
             print("that's not an option, sorry!")
