@@ -2,13 +2,6 @@ from time import sleep
 restart = "yes"
 from objects import *
 while restart == "yes":
-<<<<<<< HEAD
-=======
-    longsleep = 2
-    medsleep = 1.5
-    shortsleep = 1
-    from objects import *
->>>>>>> game
     longsleep = 2
     medsleep = 1.5
     shortsleep = 1
@@ -65,32 +58,13 @@ while restart == "yes":
                     sleep(medsleep)
                     blacksmith.impact = print("-1 life")
                     lives = (lives-1)
-                    print("You now have", lives, "lives")
                     break
                 elif iron != "y" or "n":
                     print("that's not an option, sorry!")
             break
         elif choice1 == "villager":
-<<<<<<< Updated upstream
-            sleep(longsleep)
-            print("The villager isn't home, but you see a chest in his home!")
-            sleep(longsleep)
-            print("You open the chest and find coins!")
-            sleep(medsleep)
-            print("+10 coins")
-            coins.append(10)
-            def village():
-                print("The villager isn't home, but you see a chest in his home!")
-                sleep(longsleep)
-                print("You open the chest and find coins!")
-                sleep(medsleep)
-                villager.impact
-                villager.service
-            village()
-=======
             vt = villager(vtalk(), 10, '-')
             print(coins)
->>>>>>> Stashed changes
             break
         elif choice1 != "blacksmith" or "villager":
             print("that's not an option, sorry!")
