@@ -7,7 +7,7 @@ while restart == "yes":
     shortsleep = 1
     lives = 5
     coins = []
-    items = user.items
+    items = []
     choice1 = ""
     start = ""
     iron = ""
@@ -63,7 +63,8 @@ while restart == "yes":
                     print("that's not an option, sorry!")
             break
         elif choice1 == "villager":
-            vt = villager(vtalk(), 10, '-')
+            villager(vtalk(), 10)
+            coins.append(10)
             print(coins)
             break
         elif choice1 != "blacksmith" or "villager":
@@ -87,9 +88,7 @@ while restart == "yes":
             print("The noise awakens the villager and he punches you for interrupting his beauty sleep!")
             sleep(medsleep)
             print("-2 lives")
-            def sleeper():
-                sleeping_villager
-            sleeper()
+            sleeping_villager
             lives = (lives-2)
             break
         elif choice2 == "armorer":

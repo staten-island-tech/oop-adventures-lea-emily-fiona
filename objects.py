@@ -96,11 +96,6 @@ class sword2(sword):
         self.name = "Gold sword"
         self.damage = 80
 
-def vtalk():
-    print("The villager isn't home, but you see a chest in his home!")
-    sleep(longsleep)
-    print("You open the chest and find coins!")
-    sleep(medsleep)
 
 class user():
     def __init__(self, lives, coins, items, restart):
@@ -112,11 +107,18 @@ class user():
     coins = []
     items = []
     restart = "yes"
+
 class  villager(user):
-    def __init__(self, service, coins, items):
-        super().__init__(coins, items)
+    def __init__(self, service, coins):
+        self.coins = coins
         self.service = service
-        self.coins = coins.append(10)
+
+def vtalk():
+    print("The villager isn't home, but you see a chest in his home!")
+    sleep(longsleep)
+    print("You open the chest and find coins!")
+    sleep(medsleep)
+
 class sleeping_villager(villager):
     def __init__(self, service):
         super().__init__(service)
