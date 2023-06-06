@@ -47,12 +47,7 @@ while restart == "yes":
             while iron != "y" or "n":
                 iron = input("Do you help him? y/n ").lower()
                 if iron == "y":
-<<<<<<< Updated upstream
                     sidequest = blacksmith_iron("help","progress", abc())
-=======
-                    blacksmith_iron("iron", "help", abc())
-                    items.append("Iron sword")
->>>>>>> Stashed changes
                     coins.append(5)
                     break
                 elif iron == "n":
