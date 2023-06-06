@@ -48,7 +48,7 @@ while restart == "yes":
             while iron != "y" or "n":
                 iron = input("Do you help him? y/n").lower()
                 if iron == "y":
-                    print(blacksmith_iron.side_quest)
+                    sidequest = blacksmith_iron("help","progress", abc())
                     items.append("Iron sword")
                     coins.append(5)
                     break
@@ -142,9 +142,7 @@ while restart == "yes":
             healer()
             break
         elif choice3 == "alchemist":
-            def alchemy():
-                alchemist
-            alchemy()
+            sidequest = alchemist_transform("appreciate", "transform", alchemisttransform())
             break
         elif choice3 != "witch" or "alchemist":
             print("that's not an option, sorry!")
