@@ -1,7 +1,10 @@
 from time import sleep
 restart = "yes"
-from objects import *
 while restart == "yes":
+    longsleep = 2
+    medsleep = 1.5
+    shortsleep = 1
+    from objects import *
     longsleep = 2
     medsleep = 1.5
     shortsleep = 1
@@ -25,7 +28,6 @@ while restart == "yes":
             print("Too bad!")
             break
         else:
-            print("that's not an option, sorry!") 
             print("that's not an option, sorry!")    
     sleep(longsleep)
     print("Your friend has been captured by the leader of a village far, far away")
@@ -40,14 +42,14 @@ while restart == "yes":
     sleep(shortsleep)
     while choice1 != "blacksmith" or "villager":
         choice1 = input("blacksmith or villager: ").lower()
-        choice1 = input("blacksmith or villager:").lower()
         if choice1 == "blacksmith":
             print("The blacksmith asks for your help to find iron")
             sleep(shortsleep)
             while iron != "y" or "n":
                 iron = input("Do you help him? y/n").lower()
                 if iron == "y":
-                    sidequest = blacksmith_iron("help", "iron", abc())
+                    print(blacksmith_iron.side_quest)
+                    items.append("Iron sword")
                     coins.append(5)
                     break
                 elif iron == "n":
@@ -78,7 +80,6 @@ while restart == "yes":
     sleep(shortsleep)
     while choice2 != "armorer" or "villager":
         choice2 = input("villager or armorer: ").lower()
-        choice2 = input("villager or armorer:").lower()
         if choice2 == "villager":
             sleep(longsleep)
             print("You walk in, and the villager is sleeping")
@@ -113,7 +114,6 @@ while restart == "yes":
     sleep(shortsleep)
     while choice3 != "witch" or "alchemist":
         choice3 = input("witch or alchemist: ").lower()
-        choice3 = input("witch or alchemist:").lower()
         if choice3 == "witch":
             sleep(longsleep)
             print("To your surprise, this witch is a good witch!")
@@ -129,7 +129,9 @@ while restart == "yes":
             healer()
             break
         elif choice3 == "alchemist":
-            sidequest = alchemist_transform("appreciate", "transform", alchemisttransform())
+            def alchemy():
+                alchemist
+            alchemy()
             break
         elif choice3 != "witch" or "alchemist":
             print("that's not an option, sorry!")
@@ -224,7 +226,7 @@ while restart == "yes":
                     sleep(longsleep)
                     print("You have enough coins to restart!")
                     sleep(longsleep)
-                    restart = input("Would you like to restart? yes/no ").lower()
+                
                     while restart != "yes" or "no":
                         restart = input("Would you like to restart? y/n").lower()
                         if restart == "y":
@@ -254,13 +256,12 @@ while restart == "yes":
                 print("...forever")
                 sleep(longsleep)
                 if x >= 7:
-                    print("OH!") 
+                    print("OH!")
                     sleep(longsleep)
                     print("Good news!!")
                     sleep(longsleep)
                     print("You have enough coins to restart!")
                     sleep(longsleep)
-                    restart = input("Would you like to restart? yes/no ").lower()
                     while restart != "yes" or "no":
                         restart = input("Would you like to restart? y/n").lower()
                         if restart == "y":
@@ -319,7 +320,6 @@ while restart == "yes":
                     sleep(longsleep)
                     print("You have enough coins to restart!")
                     sleep(longsleep)
-                    restart = input("Would you like to restart? yes/no ").lower()
                     while restart != "yes" or "no":
                         restart = input("Would you like to restart? y/n").lower()
                         if restart == "y":
@@ -390,7 +390,6 @@ while restart == "yes":
                     sleep(longsleep)
                     print("You have enough coins to restart!")
                     sleep(longsleep)
-                    restart = input("Would you like to restart? yes/no ").lower()
                     while restart != "yes" or "no":
                         restart = input("Would you like to restart? y/n").lower()
                         if restart == "y":
