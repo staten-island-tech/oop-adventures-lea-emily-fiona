@@ -67,7 +67,6 @@ while restart == "yes":
         elif choice1 == "villager":
             villager(vtalk(), 10)
             coins.append(10)
-            print(coins)
             break
         elif choice1 != "blacksmith" or "villager":
             print("that's not an option, sorry!")
@@ -81,15 +80,7 @@ while restart == "yes":
     while choice2 != "armorer" or "villager":
         choice2 = input("villager or armorer: ").lower()
         if choice2 == "villager":
-            sleep(longsleep)
-            print("You walk in, and the villager is sleeping")
-            sleep(longsleep)
-            print("While walking around, you step on a squeaky floorboard")
-            sleep(longsleep)
-            print("The noise awakens the villager and he punches you for interrupting his beauty sleep!")
-            sleep(medsleep)
-            print("-2 lives")
-            sleeping_villager
+            sleeping_villager(svtalk())
             lives = (lives-2)
             break
         elif choice2 == "armorer":
