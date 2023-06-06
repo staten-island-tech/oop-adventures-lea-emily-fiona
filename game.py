@@ -47,7 +47,12 @@ while restart == "yes":
             while iron != "y" or "n":
                 iron = input("Do you help him? y/n ").lower()
                 if iron == "y":
+<<<<<<< Updated upstream
                     sidequest = blacksmith_iron("help","progress", abc())
+=======
+                    blacksmith_iron("iron", "help", abc())
+                    items.append("Iron sword")
+>>>>>>> Stashed changes
                     coins.append(5)
                     break
                 elif iron == "n":
@@ -103,18 +108,7 @@ while restart == "yes":
     while choice3 != "witch" or "alchemist":
         choice3 = input("witch or alchemist: ").lower()
         if choice3 == "witch":
-            sleep(longsleep)
-            print("To your surprise, this witch is a good witch!")
-            sleep(longsleep)
-            potions.name = "healing potion"
-            potions.use = "your lives get restored!"
-            print("She gives you a", potions.name, "and", potions.use)
-            sleep(medsleep)
-            print("reset : you now have 5 lives")
-            lives = 5
-            def healer():
-                witch
-            healer()
+            witch(witch_plot(), healing_potion)
             break
         elif choice3 == "alchemist":
             sidequest = alchemist_transform("appreciate", "transform", alchemisttransform())
@@ -289,7 +283,7 @@ while restart == "yes":
                             break
                         else:
                             print("that's not an option, sorry!")
-            elif "Iron Shield" not in items and "Gold Shield" not in items and "Gold Sword" not in items and lives < 3:
+            elif "Iron Sword" in items and "Iron Shield" not in items and "Gold Shield" not in items and "Gold Sword" not in items and lives < 3:
                 sleep(longsleep)
                 print("You've made many poor decisions in our village, and it will show in this battle")
                 sleep(longsleep)

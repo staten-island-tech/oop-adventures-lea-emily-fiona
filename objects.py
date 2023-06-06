@@ -152,22 +152,38 @@ def getarmorshield():
 
 
 class armorer(villager):
+<<<<<<< Updated upstream
     def __init__(self, service, items):
         super().__init__(service, items)
         self.service = service
+=======
+    def __init__(self, service, coins, items):
+        super().__init__(service, coins, items)
+        print("+1", shield.name)
+        sleep(1.5)
+        print("+1", armor.name)
+        sleep(1.5)
+        print("The", shield.name, "gives you", shield.defense)
+        sleep(1.5)
+        print("The", armor.name, "gives you", armor.defense)
+        self.impact = items.append("Iron shield")
+        self.impact = items.append("Iron armor")
+        self.impact = items.append(shield.name)
+        self.impact = items.append(armor.name)
+>>>>>>> Stashed changes
 
 class witch(villager):
-    def __init__(self, service, coins, items):
-        super().__init__(service, coins, items, lives)
-        self.surprise = print("To your surprise, this witch is a good witch!")
-        sleep(2)
-        self.items = potions
-        potions.name = "healing potion"
-        potions.use = "your lives get restored!"
-        self.impact = print("She gives you a", potions.name, "and", potions.use)
-        sleep(1.5)
-        print("reset : you now have 5 lives")
-        lives = 5
+    def __init__(self, service,items):
+        super().__init__(service, items)
+
+def witch_plot():
+    hp = healing_potion("healing potion", "your lives get restored", 5)
+    sleep(longsleep)
+    print("To your surprise, this witch is a good witch!")
+    sleep(longsleep)
+    print("She gives you a", hp.name, "and", hp.use)
+    sleep(medsleep)
+    print("reset : you now have 5 lives")
 
 def alchemisttransform():
     sworda = sword("use", "Iron Sword", 40)
