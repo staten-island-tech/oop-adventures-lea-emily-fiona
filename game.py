@@ -11,12 +11,12 @@ while restart == "yes":
     lives = 5
     coins = []
     items = []
-    choice1 = []
-    start = []
-    iron = []
-    choice2 = []
-    choice3 = []
-    choice4 = []
+    choice1 = ""
+    start = ""
+    iron = ""
+    choice2 = ""
+    choice3 = ""
+    choice4 = ""
     print("Hello! And welcome to the game! Are you ready to begin?")
     sleep(shortsleep)
     while start != "y" or "n":
@@ -65,20 +65,8 @@ while restart == "yes":
                     print("that's not an option, sorry!")
             break
         elif choice1 == "villager":
-            sleep(longsleep)
-            print("The villager isn't home, but you see a chest in his home!")
-            sleep(longsleep)
-            print("You open the chest and find coins!")
-            sleep(medsleep)
-            print("+10 coins")
+            villager(vtalk(), 10)
             coins.append(10)
-            def village():
-                print("The villager isn't home, but you see a chest in his home!")
-                sleep(longsleep)
-                print("You open the chest and find coins!")
-                sleep(medsleep)
-                villager
-            village()
             break
         elif choice1 != "blacksmith" or "villager":
             print("that's not an option, sorry!")
@@ -92,17 +80,7 @@ while restart == "yes":
     while choice2 != "armorer" or "villager":
         choice2 = input("villager or armorer: ").lower()
         if choice2 == "villager":
-            sleep(longsleep)
-            print("You walk in, and the villager is sleeping")
-            sleep(longsleep)
-            print("While walking around, you step on a squeaky floorboard")
-            sleep(longsleep)
-            print("The noise awakens the villager and he punches you for interrupting his beauty sleep!")
-            sleep(medsleep)
-            print("-2 lives")
-            def sleeper():
-                sleeping_villager
-            sleeper()
+            sleeping_villager(svtalk())
             lives = (lives-2)
             break
         elif choice2 == "armorer":
