@@ -152,25 +152,9 @@ def getarmorshield():
 
 
 class armorer(villager):
-<<<<<<< Updated upstream
     def __init__(self, service, items):
         super().__init__(service, items)
         self.service = service
-=======
-    def __init__(self, service, coins, items):
-        super().__init__(service, coins, items)
-        print("+1", shield.name)
-        sleep(1.5)
-        print("+1", armor.name)
-        sleep(1.5)
-        print("The", shield.name, "gives you", shield.defense)
-        sleep(1.5)
-        print("The", armor.name, "gives you", armor.defense)
-        self.impact = items.append("Iron shield")
-        self.impact = items.append("Iron armor")
-        self.impact = items.append(shield.name)
-        self.impact = items.append(armor.name)
->>>>>>> Stashed changes
 
 class witch(villager):
     def __init__(self, service,items):
