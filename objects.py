@@ -45,7 +45,6 @@ class sword(weapon):
 
 def abc():
     sworda = sword("use", "Iron Sword", 40)
-    print(sworda)
     lives = 5
     sleep(2)
     print("On your quest to find iron, you trip and fall")
