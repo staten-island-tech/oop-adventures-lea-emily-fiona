@@ -10,7 +10,7 @@ while restart == "yes":
     shortsleep = 1
     lives = 5
     coins = []
-    items = []
+    items = user.items
     choice1 = ""
     start = ""
     iron = ""
@@ -39,17 +39,15 @@ while restart == "yes":
     print("You must choose...")
     sleep(longsleep)
     print("Would you like to see the blacksmith or the villager")
-    sleep(shortsleep)
     while choice1 != "blacksmith" or "villager":
         choice1 = input("blacksmith or villager: ").lower()
         if choice1 == "blacksmith":
             print("The blacksmith asks for your help to find iron")
             sleep(shortsleep)
             while iron != "y" or "n":
-                iron = input("Do you help him? y/n").lower()
+                iron = input("Do you help him? y/n ").lower()
                 if iron == "y":
                     sidequest = blacksmith_iron("help","progress", abc())
-                    items.append("Iron sword")
                     coins.append(5)
                     break
                 elif iron == "n":
@@ -92,7 +90,7 @@ while restart == "yes":
             sleep(longsleep)
             print("The armorer decides he likes you, and he let's you keep the armor and shield!")
             sleep(medsleep)
-            armorer
+            armorer(getarmorshield(), "shield and sword")
             break
         elif choice2 != "armorer" or "villager":
             print("that's not an option, sorry!")
@@ -102,7 +100,6 @@ while restart == "yes":
     print("Here at this fork you'll meet your last villager")
     sleep(longsleep)
     print("Would you like to see the witch or the alchemist?")
-    sleep(shortsleep)
     while choice3 != "witch" or "alchemist":
         choice3 = input("witch or alchemist: ").lower()
         if choice3 == "witch":

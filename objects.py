@@ -70,15 +70,14 @@ class blacksmith_iron(objects):
 class armor(objects):
     def __init__(self, name, use, defense):
         super().__init__(name, use) 
-        self.defense = defense   
         self.defense = 20
         self.name = "Iron armor"
 
-class shield(armor):
+class shield(objects):
     def __init__(self, name, use, defense):
-        super().__init__(use, defense, name)
-        shield.defense = 20
-        shield.name = "Iron shield"
+        super().__init__(name, use)
+        self.defense = 20
+        self.name = "Iron shield"
 
 class shield2(shield):
     def __init__(self, name, use, defense):
@@ -138,20 +137,25 @@ class blacksmith(villager):
         blacksmith.impact = impact
         blacksmith.impact = blacksmith_iron.side_quest()
 
+def getarmorshield():
+    shield1 = shield("use", "Iron shield", 20)
+    armor1 = armor("use", "Iron armor", 20)
+    print("+1", shield1.name)
+    sleep(1.5)
+    print("+1", armor1.name)
+    sleep(1.5)
+    print("The", shield1.name, "gives you", shield1.defense, "defense")
+    sleep(1.5)
+    print("The", armor1.name, "gives you", armor1.defense, "defense")
+    user.items.append(shield1.name)
+    user.items.append(armor1.name)
+
+
 class armorer(villager):
-    def __init__(self, service, coins, items):
-        super().__init__(service, coins, items)
-        print("+1", shield.name)
-        sleep(1.5)
-        print("+1", armor.name)
-        sleep(1.5)
-        print("The", shield.name, "gives you", shield.defense)
-        sleep(1.5)
-        print("The", armor.name, "gives you", armor.defense)
-        self.impact = items.append("Iron shield")
-        self.impact = items.append("Iron armor")
-        self.impact = items.append(shield.name)
-        self.impact = items.append(armor.name)
+    def __init__(self, service, items):
+        super().__init__(service, items)
+        self.service = service
+
 class witch(villager):
     def __init__(self, service, coins, items):
         super().__init__(service, coins, items, lives)
@@ -185,9 +189,9 @@ def alchemisttransform():
             print("To show his appreciation, the alchemist turns your shield to gold!")
             sleep(1.5)
             print(f"+1 {shieldb.name}")
-            print(f"The {swordb.name} has {shieldb.defense} defense")
+            print(f"The {shieldb.name} has {shieldb.defense} defense")
             user.items.remove(shielda.name)
-            user.items.append(shielda.name)
+            user.items.append(shieldb.name)
     elif sworda.name not in user.items and shielda.name not in user.items:
             print("The alchemist is very grateful to you, and wants to show his appreciation")
             sleep(2)
