@@ -49,7 +49,6 @@ while restart == "yes":
                 iron = input("Do you help him? y/n").lower()
                 if iron == "y":
                     blacksmith_iron("iron", "help", abc())
-                    items.append("Iron sword")
                     coins.append(5)
                     break
                 elif iron == "n":
