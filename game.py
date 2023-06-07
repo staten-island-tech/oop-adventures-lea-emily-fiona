@@ -20,7 +20,7 @@ while restart == "yes":
     print("Hello! And welcome to the game! Are you ready to begin?")
     sleep(shortsleep)
     while start != "y" or "n":
-        start = input("y/n").lower()
+        start = input("y/n ").lower()
         if start == "y":
             print("Then let's begin...")
             break
@@ -46,7 +46,7 @@ while restart == "yes":
             print("The blacksmith asks for your help to find iron")
             sleep(shortsleep)
             while iron != "y" or "n":
-                iron = input("Do you help him? y/n").lower()
+                iron = input("Do you help him? y/n ").lower()
                 if iron == "y":
                     blacksmith_iron("iron", "help", abc())
                     coins.append(5)
@@ -138,7 +138,7 @@ while restart == "yes":
                 print("CONGRATS! YOU'VE BEAT THE GAME🥳🥳")
                 restart = "no"
                 while restart != "yes" or "no":
-                        restart = input("Would you like to play again? y/n").lower()
+                        restart = input("Would you like to play again? y/n ").lower()
                         if restart == "y":
                             restart = "yes"
                             break
